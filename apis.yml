@@ -29,7 +29,9 @@ apis:
       - type: Documentation
         url: https://docs.pdfshift.io/
       - type: OpenAPI
-        url: https://docs.pdfshift.io/api-reference/openapi.json
+        url: https://api.pdfshift.io/openapi.json
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/openapi/pdfshift-openapi.json
 common:
   - type: Website
     url: https://pdfshift.io/

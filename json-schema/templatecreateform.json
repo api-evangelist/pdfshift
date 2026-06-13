@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/json-schema/templatecreateform.json",
+  "title": "TemplateCreateForm",
+  "type": "object",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "Unique identifier for the template."
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the template."
+    },
+    "content": {
+      "type": "string",
+      "description": "HTML content of the template."
+    }
+  },
+  "required": [
+    "slug",
+    "name",
+    "content"
+  ]
+}

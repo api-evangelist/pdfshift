@@ -1,0 +1,457 @@
+[
+  {
+    "operation": "get_account",
+    "path": "/account",
+    "method": "GET",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "account": {
+        "name": "Richard Hendricks",
+        "firstname": "Richard",
+        "email": "richard@piedpiper.com",
+        "created": 1526561399000,
+        "company_name": "PiedPiper",
+        "company_details": "Hacker Hostel,\n5230 Newell Road,\nPalo Alto, CA 94303",
+        "company_vat": null,
+        "country": "US",
+        "renew_date": 1763683200000,
+        "avatar": "https://secure.gravatar.com/avatar/584ac79c82c64934d475251b46f78f4a?d=mm&s=96",
+        "billing_email": "jared@piedpiper.com",
+        "plan": {
+          "display": "Business",
+          "name": "business",
+          "credits": 50000,
+          "filesize": 1250,
+          "timeout": 100,
+          "price": 99,
+          "yearly": false,
+          "overage": 20
+        },
+        "hard_limit": null,
+        "subscription_ends_at": null
+      }
+    }
+  },
+  {
+    "operation": "get_credits_usage",
+    "path": "/credits/usage",
+    "method": "GET",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "credits": {
+        "base": 50000,
+        "remaining": 49881,
+        "total": 50000,
+        "used": 119
+      },
+      "success": true
+    }
+  },
+  {
+    "operation": "get_invoices",
+    "path": "/invoices",
+    "method": "GET",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "invoices": {
+        "has_more": true,
+        "data": [
+          {
+            "created": 1763123660000,
+            "amount": 99,
+            "reference": "PS202511-00010",
+            "download_url": "https://api.pdfshift.io/v3/invoices/PS202511-00110.pdf?token=xxx_token_xxx"
+          },
+          {
+            "created": 1760445289000,
+            "amount": 99,
+            "reference": "PS202510-00109",
+            "download_url": "https://api.pdfshift.io/v3/invoices/PS202510-00109.pdf?token=xxx_token_xxx"
+          },
+          {
+            "created": 1757853195000,
+            "amount": 99,
+            "reference": "PS202509-00108",
+            "download_url": "https://api.pdfshift.io/v3/invoices/PS202509-00108.pdf?token=xxx_token_xxx"
+          },
+          {
+            "created": 1755180347000,
+            "amount": 99,
+            "reference": "PS202508-00107",
+            "download_url": "https://api.pdfshift.io/v3/invoices/PS202508-00107.pdf?token=xxx_token_xxx"
+          },
+          {
+            "created": 1752496441000,
+            "amount": 99,
+            "reference": "PS202507-00106",
+            "download_url": "https://api.pdfshift.io/v3/invoices/PS202507-00106.pdf?token=xxx_token_xxx"
+          },
+          {
+            "created": 1749904431000,
+            "amount": 99,
+            "reference": "PS202506-00105",
+            "download_url": "https://api.pdfshift.io/v3/invoices/PS202506-00105.pdf?token=xxx_token_xxx"
+          },
+          {
+            "created": 1747226035000,
+            "amount": 99,
+            "reference": "PS202505-00104",
+            "download_url": "https://api.pdfshift.io/v3/invoices/PS202505-00104.pdf?token=xxx_token_xxx"
+          },
+          {
+            "created": 1744634029000,
+            "amount": 99,
+            "reference": "PS202504-00103",
+            "download_url": "https://api.pdfshift.io/v3/invoices/PS202504-00103.pdf?token=xxx_token_xxx"
+          },
+          {
+            "created": 1741955686000,
+            "amount": 99,
+            "reference": "PS202503-00102",
+            "download_url": "https://api.pdfshift.io/v3/invoices/PS202503-00102.pdf?token=xxx_token_xxx"
+          },
+          {
+            "created": 1739536453000,
+            "amount": 99,
+            "reference": "PS202502-00101",
+            "download_url": "https://api.pdfshift.io/v3/invoices/PS202502-00101.pdf?token=xxx_token_xxx"
+          }
+        ],
+        "limit": 10,
+        "page": 0,
+        "total": 28
+      }
+    }
+  },
+  {
+    "operation": "post_convert_pdf",
+    "path": "/convert/pdf",
+    "method": "POST",
+    "type": "response_200",
+    "media_type": "application/pdf",
+    "example": "<...PDF binary data...>"
+  },
+  {
+    "operation": "post_convert_pdf",
+    "path": "/convert/pdf",
+    "method": "POST",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "url": "https://s3.amazonaws.com/pdfshift/d/2/2019-05/99c456250a01448686d81752a3fb5beb/15466098-8368-49e1-ac33-ff4c3941a0df.pdf",
+      "filesize": 259972,
+      "duration": 1500,
+      "response": {
+        "duration": 2562,
+        "status-code": 200
+      },
+      "executed": "2025-12-02T12:34:56.789Z",
+      "pdf_pages": 5
+    }
+  },
+  {
+    "operation": "post_convert_pdf",
+    "path": "/convert/pdf",
+    "method": "POST",
+    "type": "response_202",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "queued": true
+    }
+  },
+  {
+    "operation": "post_convert_png",
+    "path": "/convert/png",
+    "method": "POST",
+    "type": "response_200",
+    "media_type": "image/png",
+    "example": "<...PNG binary data...>"
+  },
+  {
+    "operation": "post_convert_png",
+    "path": "/convert/png",
+    "method": "POST",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "url": "https://s3.amazonaws.com/pdfshift/d/2/2019-05/99c456250a01448686d81752a3fb5beb/15466098-8368-49e1-ac33-ff4c3941a0df.pdf",
+      "filesize": 259972,
+      "duration": 1500,
+      "response": {
+        "duration": 2562,
+        "status-code": 200
+      },
+      "executed": "2025-12-02T12:34:56.789Z"
+    }
+  },
+  {
+    "operation": "post_convert_png",
+    "path": "/convert/png",
+    "method": "POST",
+    "type": "response_202",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "queued": true
+    }
+  },
+  {
+    "operation": "post_convert_jpeg",
+    "path": "/convert/jpeg",
+    "method": "POST",
+    "type": "response_200",
+    "media_type": "image/jpeg",
+    "example": "<...JPEG binary data...>"
+  },
+  {
+    "operation": "post_convert_jpeg",
+    "path": "/convert/jpeg",
+    "method": "POST",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "url": "https://s3.amazonaws.com/pdfshift/d/2/2019-05/99c456250a01448686d81752a3fb5beb/15466098-8368-49e1-ac33-ff4c3941a0df.pdf",
+      "filesize": 259972,
+      "duration": 1500,
+      "response": {
+        "duration": 2562,
+        "status-code": 200
+      },
+      "executed": "2025-12-02T12:34:56.789Z"
+    }
+  },
+  {
+    "operation": "post_convert_jpeg",
+    "path": "/convert/jpeg",
+    "method": "POST",
+    "type": "response_202",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "queued": true
+    }
+  },
+  {
+    "operation": "post_convert_webp",
+    "path": "/convert/webp",
+    "method": "POST",
+    "type": "response_200",
+    "media_type": "image/webp",
+    "example": "<...WEBP binary data...>"
+  },
+  {
+    "operation": "post_convert_webp",
+    "path": "/convert/webp",
+    "method": "POST",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "url": "https://s3.amazonaws.com/pdfshift/d/2/2019-05/99c456250a01448686d81752a3fb5beb/15466098-8368-49e1-ac33-ff4c3941a0df.pdf",
+      "filesize": 259972,
+      "duration": 1500,
+      "response": {
+        "duration": 2562,
+        "status-code": 200
+      },
+      "executed": "2025-12-02T12:34:56.789Z"
+    }
+  },
+  {
+    "operation": "post_convert_webp",
+    "path": "/convert/webp",
+    "method": "POST",
+    "type": "response_202",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "queued": true
+    }
+  },
+  {
+    "operation": "get_logs",
+    "path": "/logs",
+    "method": "GET",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "logs": {
+        "has_more": true,
+        "data": [
+          {
+            "id": 12345500,
+            "duration": 2191,
+            "executed": 1764753251000,
+            "credits": 1,
+            "sandbox": false,
+            "filesize": 305345,
+            "error": null,
+            "code": 200,
+            "user_agent": "Python/3.9 aiohttp/3.10.5",
+            "request_id": "40bad9f3-0eb8-4de3-82de-3886ff9522ed",
+            "query": null
+          },
+          {
+            "id": 12345501,
+            "duration": 2385,
+            "executed": 1764753169000,
+            "credits": 1,
+            "sandbox": false,
+            "filesize": 310593,
+            "error": null,
+            "code": 200,
+            "user_agent": "Python/3.9 aiohttp/3.10.5",
+            "request_id": "e8079824-f786-45b1-a8cb-a35fe916ea8d",
+            "query": null
+          },
+          {
+            "id": 12345502,
+            "duration": 2377,
+            "executed": 1764752870000,
+            "credits": 1,
+            "sandbox": false,
+            "filesize": 306883,
+            "error": null,
+            "code": 200,
+            "user_agent": "Python/3.9 aiohttp/3.10.5",
+            "request_id": "22bf9320-455a-4e91-bda4-b90cfb0e4eb0",
+            "query": null
+          },
+          {
+            "id": 12345503,
+            "duration": 2209,
+            "executed": 1764752729000,
+            "credits": 1,
+            "sandbox": false,
+            "filesize": 334962,
+            "error": null,
+            "code": 200,
+            "user_agent": "Python/3.9 aiohttp/3.10.5",
+            "request_id": "6ac98706-9dbe-4ba2-acaf-3ad2313048d6",
+            "query": null
+          },
+          {
+            "id": 12345504,
+            "duration": 1419,
+            "executed": 1764616844000,
+            "credits": 1,
+            "sandbox": false,
+            "filesize": 300952,
+            "error": null,
+            "code": 200,
+            "user_agent": "Python/3.9 aiohttp/3.10.5",
+            "request_id": "63a0fdbf-a07c-4c65-a8f7-4ad09db5530c",
+            "query": null
+          }
+        ],
+        "limit": 5,
+        "page": 0,
+        "total": 233
+      }
+    }
+  },
+  {
+    "operation": "get_logs_{request_id}",
+    "path": "/logs/{request_id}",
+    "method": "GET",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "log": {
+        "id": 12345500,
+        "duration": 2191,
+        "executed": 1764753251000,
+        "credits": 1,
+        "sandbox": false,
+        "filesize": 305345,
+        "error": null,
+        "code": 200,
+        "user_agent": "Python/3.9 aiohttp/3.10.5",
+        "request_id": "40bad9f3-0eb8-4de3-82de-3886ff9522ed",
+        "query": null
+      }
+    }
+  },
+  {
+    "operation": "get_templates",
+    "path": "/templates",
+    "method": "GET",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "templates": {
+        "has_more": false,
+        "data": [
+          {
+            "slug": "test-1",
+            "created": 1734076868000,
+            "name": "First test for templates"
+          }
+        ],
+        "limit": 10,
+        "page": 0,
+        "total": 1
+      }
+    }
+  },
+  {
+    "operation": "post_templates",
+    "path": "/templates",
+    "method": "POST",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "template": {
+        "slug": "test-1",
+        "created": 1734076868073,
+        "name": "First test for templates"
+      }
+    }
+  },
+  {
+    "operation": "get_templates_{slug}.html",
+    "path": "/templates/{slug}.html",
+    "method": "GET",
+    "type": "response_200",
+    "media_type": "text/html",
+    "example": "<html>...</html>"
+  },
+  {
+    "operation": "put_templates_{slug}",
+    "path": "/templates/{slug}",
+    "method": "PUT",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true,
+      "template": {
+        "slug": "test-1",
+        "created": 1734076868000,
+        "name": "First test for templates"
+      }
+    }
+  },
+  {
+    "operation": "delete_templates_{slug}",
+    "path": "/templates/{slug}",
+    "method": "DELETE",
+    "type": "response_200",
+    "media_type": "application/json",
+    "example": {
+      "success": true
+    }
+  }
+]

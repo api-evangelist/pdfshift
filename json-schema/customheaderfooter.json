@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/json-schema/customheaderfooter.json",
+  "title": "CustomHeaderFooter",
+  "type": "object",
+  "properties": {
+    "source": {
+      "description": "Element to add in the header part of the document.\nPDFShift will automatically detect if it's an URL and load it, or an HTML data and charge it.\n\nAccepted variables are:\n  {{date}}  - Formatted print date\n  {{title}} - Title of the HTML document\n  {{url}}   - Page URL\n  {{page}}  - Current page\n  {{total}} - Total number of pages",
+      "type": "string"
+    },
+    "height": {
+      "type": "string",
+      "default": null,
+      "description": "A spacing between the header or footer and the content.\nFor header, it's the space between the header and the beginning of the document.\nFor the footer, it's the space between the end of the document and the bottom of the page."
+    },
+    "start_at": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "description": "Start to display the header/footer at that given page.\n**Important**: If you send header AND footer, and set a start_at higher than 1, it must be the same for header and footer.\n\nFor instance, header.start_at = 1 and footer.start_at = 5 is possible.\nBut header.start_at = 2 and footer.start_at = 3 is NOT possible."
+    }
+  },
+  "required": [
+    "source"
+  ]
+}

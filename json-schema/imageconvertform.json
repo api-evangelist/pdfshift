@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/json-schema/imageconvertform.json",
+  "title": "ImageConvertForm",
+  "type": "object",
+  "properties": {
+    "viewport": {
+      "type": "string",
+      "default": "1280x1024",
+      "description": "Default size of the rendering window. This will define the size of your image when using fullpage. Format in {width}x{height} (in pixels)."
+    },
+    "transparent": {
+      "type": "boolean",
+      "default": false,
+      "description": "If set to true, the image will have a transparent background.\n**Note**: This option is only available when outputting PNG images."
+    },
+    "fullpage": {
+      "type": "boolean",
+      "default": false,
+      "description": "Capture the full scrollable page.\nOnly one of `fullpage`, `css_selector`, or `clip` can be set."
+    },
+    "css_selector": {
+      "type": "string",
+      "default": null,
+      "description": "CSS selector for the element to capture.\nOnly one of `fullpage`, `css_selector`, or `clip` can be set."
+    },
+    "clip": {
+      "type": "object",
+      "description": "Clip region to capture.\nOnly one of `fullpage`, `css_selector`, or `clip` can be set.",
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Width of the region to capture (in pixels)."
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Height of the region to capture (in pixels)."
+        },
+        "x": {
+          "type": "integer",
+          "description": "X coordinate of the top-left corner (in pixels)."
+        },
+        "y": {
+          "type": "integer",
+          "description": "Y coordinate of the top-left corner (in pixels)."
+        }
+      },
+      "required": [
+        "width",
+        "height",
+        "x",
+        "y"
+      ]
+    },
+    "quality": {
+      "type": "integer",
+      "minimum": 10,
+      "maximum": 100,
+      "default": 80,
+      "description": "Quality of the output image (only for JPEG, 10-100)."
+    },
+    "dpi": {
+      "type": "integer",
+      "enum": [
+        1,
+        2,
+        4
+      ],
+      "default": 1,
+      "description": "DPI scaling factor. Must be one of 1, 2, or 4."
+    }
+  }
+}

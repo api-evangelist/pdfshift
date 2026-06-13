@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "pdfshift": "https://pdfshift.io/vocab#",
+    "api": "https://api.pdfshift.io/v3/",
+    "source": "pdfshift:source",
+    "sandbox": "pdfshift:sandbox",
+    "encode": "pdfshift:encode",
+    "filename": "pdfshift:filename",
+    "webhook": "pdfshift:webhook",
+    "s3_destination": "pdfshift:s3Destination",
+    "timeout": "pdfshift:timeout",
+    "wait_for": "pdfshift:waitFor",
+    "landscape": "pdfshift:landscape",
+    "css": "pdfshift:css",
+    "javascript": "pdfshift:javascript",
+    "format": "pdfshift:format",
+    "pages": "pdfshift:pages",
+    "zoom": "pdfshift:zoom",
+    "margin": "pdfshift:margin",
+    "header": "pdfshift:header",
+    "footer": "pdfshift:footer",
+    "protection": "pdfshift:protection",
+    "watermark": "pdfshift:watermark",
+    "auth": "pdfshift:auth",
+    "cookies": "pdfshift:cookies",
+    "http_headers": "pdfshift:httpHeaders",
+    "Account": "pdfshift:Account",
+    "Credits": "pdfshift:Credits",
+    "Template": "pdfshift:Template",
+    "Log": "pdfshift:Log",
+    "ConvertPDF": {
+      "@id": "pdfshift:ConvertPDF",
+      "@type": "@id"
+    },
+    "ConvertImage": {
+      "@id": "pdfshift:ConvertImage",
+      "@type": "@id"
+    }
+  }
+}

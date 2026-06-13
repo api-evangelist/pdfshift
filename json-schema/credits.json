@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/json-schema/credits.json",
+  "title": "Credits",
+  "type": "object",
+  "properties": {
+    "credits": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "remaining": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "used": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "success": {
+      "type": "boolean"
+    }
+  },
+  "x-last-modified": 1764750524862
+}

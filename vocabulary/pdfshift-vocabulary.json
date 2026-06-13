@@ -1,0 +1,380 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PDFShift API Vocabulary",
+  "description": "Vocabulary terms extracted from the PDFShift API specification",
+  "version": "3.0",
+  "terms": [
+    {
+      "term": "source",
+      "description": "PDF source. Must be a valid URL or a base64 encoded PDF document.",
+      "type": "string",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "height",
+      "description": "Height of the region to capture (in pixels).",
+      "type": "integer",
+      "context": "clip"
+    },
+    {
+      "term": "start_at",
+      "description": "Start to display the header/footer at that given page.\n**Important**: If you send header AND footer, and set a start_at higher than 1, it must be the same for header and footer.\n\nFor instance, header.start_at = 1 and footer.start_at = 5 is possible.\nBut header.start_at = 2 and footer.start_at = 3 is NOT possible.",
+      "type": "integer",
+      "context": "CustomHeaderFooter"
+    },
+    {
+      "term": "sandbox",
+      "description": "Will generates documents that doesn't count in the credits. The generated document will come with a watermark and you are limited to 10 documents per minutes.",
+      "type": "boolean",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "encode",
+      "description": "Will return the generated PDF in Base64 encoded format, instead of raw.",
+      "type": "boolean",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "filename",
+      "description": "Name of the destination file.\nOnly an alphanumerical value with \"-\" or \"_\", of at least 7 chars accepted.\n\nIf given, the response **will not be the PDF**, but a JSON response containing an url parameter to an Amazon S3 bucket, to download the file.\nThe file will be **kept for 2 days**, then automatically deleted.\n\nSee [Saving the document to Amazon S3](/docs/saving-to-s3) for an example.",
+      "type": "string",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "s3_destination",
+      "description": "Path to your S3 bucket, in order to save the converted PDF directly into your AWS S3 account.\nUse a full path value like\n`s3://doc-example-bucket/pdfshift/upload/86aa3ede7d05.pdf`.\n\nSee [Saving to your Amazon S3](/docs/saving/to-s3) for more details.\n\nNote that you can also save to [Google Cloud Storage](/docs/saving/to-gs) and reach out to us if you want to store to other services as well",
+      "type": "string",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "use_print",
+      "description": "Use the print stylesheet instead of the general one.",
+      "type": "boolean",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "css",
+      "description": "Will append this CSS styles to the document before saving it. Can be an URL or a String of CSS rules.",
+      "type": "string",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "javascript",
+      "description": "Will execute the given Javascript before saving the document. Can be an URL or a String of JS code.",
+      "type": "string",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "delay",
+      "description": "In milliseconds. Will wait for this duration before capturing the document. Up to 10 seconds max.",
+      "type": "integer",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "timeout",
+      "description": "If provided, will kill the page loading at a specified time without stopping with a TimeoutError. Value in seconds.",
+      "type": "integer",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "wait_for",
+      "description": "Name of a function available globally.\nWhen present, PDFShift will wait for this function to return a truthy value (true, 1, a string, etc) or up to 30 seconds, then proceed to the conversion.\nIf the function never returns a truthy value in the allocated time, the conversion will fail with an error.",
+      "type": "string",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "wait_for_network",
+      "description": "If set to true, will wait that there was no network requests in the last 500ms.",
+      "type": "boolean",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "ignore_long_polling",
+      "description": "Will not wait for long-polling request to end before generating the document.\nThis can be helpful when loading a page that have websockets or long running queries that have no impact on the generated document.\nRequires `wait_for_network` to be set to true, otherwise the conversion never waits for network requests at all.",
+      "type": "boolean",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "disable_javascript",
+      "description": "Will not execute the javascript at all in the document.",
+      "type": "boolean",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "lazy_load_images",
+      "description": "When set to true, will scroll the page to the bottom to trigger loading the images with lazy loading before saving the document.",
+      "type": "boolean",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "raise_for_status",
+      "description": "Won't convert the document if the loaded source (when HTTP) returns a non 2XX response.",
+      "type": "boolean",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "webhook",
+      "description": "An URL where we will send a POST request containing a JSON body similar to when you use the filename parameter.\nThe JSON response will contain a URL key that points to your file, stored on Amazon S3.\n\n**Note**: When the conversion fail, we also do a `POST` request to your endpoint, but with an `error` key instead.\n\nWe recommend you to first check if the body contains the `error` before processing the document, and act accordingly.",
+      "type": "unknown",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "auth",
+      "description": "Basic authentication that will be sent along the request to load the source when it's an URL.",
+      "type": "unknown",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "http_headers",
+      "description": "List of HTTP headers that you can pass to the request when loading the source URL.",
+      "type": "object",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "cookies",
+      "description": "List of cookies you want to send along with the requests when loading the source.\nThey must be provided as an array of objects.",
+      "type": "array",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "is_hipaa",
+      "description": "When set to True, ensure the conversion's parameters are compliant to HIPAA regulations.\nThis will disable features such as `filename` or `webhook` when the `s3_destination` is managed by PDFShift, to avoid storing any sensitive documents on PDFShift's servers. See [Handling sensitive documents](https://help.pdfshift.io/how-do-you-handle-sensitive-documents) for more details.",
+      "type": "boolean",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "is_gdpr",
+      "description": "When set to True, ensure the conversion's parameters are compliant to GDPR regulations.\nThis will disable features such as `filename` or `webhook` when the `s3_destination` is managed by PDFShift, to avoid storing any sensitive documents on PDFShift's servers. See [Handling sensitive documents](https://help.pdfshift.io/how-do-you-handle-sensitive-documents) for more details.",
+      "type": "boolean",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "log_request",
+      "description": "Log the request parameters. Useful for debugging purposes with PDFShift support.",
+      "type": "boolean",
+      "context": "ConvertForm"
+    },
+    {
+      "term": "viewport",
+      "description": "Default size of the rendering window. This will define the size of your image when using fullpage. Format in {width}x{height} (in pixels).",
+      "type": "string",
+      "context": "ImageConvertForm"
+    },
+    {
+      "term": "transparent",
+      "description": "If set to true, the image will have a transparent background.\n**Note**: This option is only available when outputting PNG images.",
+      "type": "boolean",
+      "context": "ImageConvertForm"
+    },
+    {
+      "term": "fullpage",
+      "description": "Capture the full scrollable page.\nOnly one of `fullpage`, `css_selector`, or `clip` can be set.",
+      "type": "boolean",
+      "context": "ImageConvertForm"
+    },
+    {
+      "term": "css_selector",
+      "description": "CSS selector for the element to capture.\nOnly one of `fullpage`, `css_selector`, or `clip` can be set.",
+      "type": "string",
+      "context": "ImageConvertForm"
+    },
+    {
+      "term": "clip",
+      "description": "Clip region to capture.\nOnly one of `fullpage`, `css_selector`, or `clip` can be set.",
+      "type": "object",
+      "context": "ImageConvertForm"
+    },
+    {
+      "term": "width",
+      "description": "Width of the region to capture (in pixels).",
+      "type": "integer",
+      "context": "clip"
+    },
+    {
+      "term": "x",
+      "description": "X coordinate of the top-left corner (in pixels).",
+      "type": "integer",
+      "context": "clip"
+    },
+    {
+      "term": "y",
+      "description": "Y coordinate of the top-left corner (in pixels).",
+      "type": "integer",
+      "context": "clip"
+    },
+    {
+      "term": "quality",
+      "description": "Quality of the output image (only for JPEG, 10-100).",
+      "type": "integer",
+      "context": "ImageConvertForm"
+    },
+    {
+      "term": "dpi",
+      "description": "DPI scaling factor. Must be one of 1, 2, or 4.",
+      "type": "integer",
+      "context": "ImageConvertForm"
+    },
+    {
+      "term": "author",
+      "description": "Author metadata for the PDF.",
+      "type": "string",
+      "context": "ProtectionForm"
+    },
+    {
+      "term": "user_password",
+      "description": "Password required to open the PDF.",
+      "type": "string",
+      "context": "ProtectionForm"
+    },
+    {
+      "term": "owner_password",
+      "description": "Password required to change permissions.",
+      "type": "string",
+      "context": "ProtectionForm"
+    },
+    {
+      "term": "no_print",
+      "description": "Disallow printing of the PDF.",
+      "type": "boolean",
+      "context": "ProtectionForm"
+    },
+    {
+      "term": "no_copy",
+      "description": "Disallow copying content from the PDF.",
+      "type": "boolean",
+      "context": "ProtectionForm"
+    },
+    {
+      "term": "no_modify",
+      "description": "Disallow modifying the PDF.",
+      "type": "boolean",
+      "context": "ProtectionForm"
+    },
+    {
+      "term": "image",
+      "description": "Image source for watermark.",
+      "type": "string",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "text",
+      "description": "Text to use as watermark.",
+      "type": "string",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "font_size",
+      "description": "Font size for text watermark (5-300).",
+      "type": "integer",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "font_family",
+      "description": "Font family for text watermark.",
+      "type": "string",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "font_color",
+      "description": "Font color in hexadecimal (e.g. #000000 or 000000).",
+      "type": "string",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "font_opacity",
+      "description": "Font opacity percentage (0-100).",
+      "type": "integer",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "font_bold",
+      "description": "Bold font for text watermark.",
+      "type": "boolean",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "font_italic",
+      "description": "Italic font for text watermark.",
+      "type": "boolean",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "offset_x",
+      "description": "Horizontal offset: 'left', 'right', 'center', or value ending with px/in/cm/mm/pt.",
+      "type": "string",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "offset_y",
+      "description": "Vertical offset: 'top', 'bottom', 'middle', or value ending with px/in/cm/mm/pt.",
+      "type": "string",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "rotate",
+      "description": "Rotation angle for watermark (-359 to 359).",
+      "type": "integer",
+      "context": "WatermarkForm"
+    },
+    {
+      "term": "slug",
+      "description": "Unique identifier for the template.",
+      "type": "string",
+      "context": "TemplateCreateForm"
+    },
+    {
+      "term": "name",
+      "description": "Name of the template.",
+      "type": "string",
+      "context": "TemplateUpdateForm"
+    },
+    {
+      "term": "content",
+      "description": "HTML content of the template.",
+      "type": "string",
+      "context": "TemplateUpdateForm"
+    },
+    {
+      "term": "X-Processor-Version",
+      "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+      "type": "string",
+      "context": "POST /convert/webp"
+    },
+    {
+      "term": "limit",
+      "description": "Number of items to return (between 5 and 100, defaults to 20)",
+      "type": "integer",
+      "context": "GET /logs"
+    },
+    {
+      "term": "status",
+      "description": "Filter logs by status: 'error', 'success', or 'all' (default: 'all')",
+      "type": "string",
+      "context": "GET /logs"
+    },
+    {
+      "term": "key",
+      "description": "API Key to filter the results to. Default is null, which includes all requests from all API keys.",
+      "type": "string",
+      "context": "GET /logs"
+    },
+    {
+      "term": "cursor",
+      "description": "Returns the items that occur after the given log ID.",
+      "type": "integer",
+      "context": "GET /logs"
+    },
+    {
+      "term": "before",
+      "description": "Returns the events that occurred before the given time. Format is ISO datetime.",
+      "type": "string",
+      "context": "GET /logs"
+    },
+    {
+      "term": "request_id",
+      "description": "The unique request ID of the log entry to retrieve.",
+      "type": "string",
+      "context": "GET /logs/{request_id}"
+    }
+  ]
+}

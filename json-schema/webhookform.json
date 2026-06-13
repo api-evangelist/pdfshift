@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/json-schema/webhookform.json",
+  "title": "WebhookForm",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "method": {
+      "type": "string",
+      "default": "POST"
+    },
+    "auth": {
+      "$ref": "#/components/schemas/BasicAuthForm"
+    },
+    "headers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "url"
+  ]
+}

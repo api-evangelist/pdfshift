@@ -1,0 +1,46 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "pdfshift": "https://pdfshift.io/vocab#"
+  },
+  "@type": "WebAPI",
+  "@id": "https://api.pdfshift.io/v3",
+  "name": "PDFShift API Documentation",
+  "description": "This is the documentation for the PDFShift API.\n\nOur aim here is to provide you with a clear, concise and complete set of tool to generate the PDF you want.\n\nDon't forget to add the `sandbox` parameter to `True` while testing the API, this won't use your credits and generate free PDF (with a watermark).\nBut if you forgot to set it, don't worry ; Send us a message and we'll reset your credits usage.",
+  "version": "3.0",
+  "termsOfService": "https://pdfshift.io/terms",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "name": "PDFShift",
+    "url": "https://pdfshift.io",
+    "email": "support@pdfshift.io"
+  },
+  "documentation": "https://docs.pdfshift.io/",
+  "endpointURL": "https://api.pdfshift.io/v3",
+  "availableChannel": [
+    {
+      "@type": "ServiceChannel",
+      "name": "PDF Conversion",
+      "serviceUrl": "https://api.pdfshift.io/v3/convert/pdf",
+      "description": "Convert HTML/URLs to PDF"
+    },
+    {
+      "@type": "ServiceChannel",
+      "name": "PNG Conversion",
+      "serviceUrl": "https://api.pdfshift.io/v3/convert/png",
+      "description": "Convert HTML/URLs to PNG screenshots"
+    },
+    {
+      "@type": "ServiceChannel",
+      "name": "JPEG Conversion",
+      "serviceUrl": "https://api.pdfshift.io/v3/convert/jpeg",
+      "description": "Convert HTML/URLs to JPEG screenshots"
+    },
+    {
+      "@type": "ServiceChannel",
+      "name": "WEBP Conversion",
+      "serviceUrl": "https://api.pdfshift.io/v3/convert/webp",
+      "description": "Convert HTML/URLs to WEBP screenshots"
+    }
+  ]
+}

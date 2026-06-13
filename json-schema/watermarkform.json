@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/json-schema/watermarkform.json",
+  "title": "WatermarkForm",
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string",
+      "description": "PDF source. Must be a valid URL or a base64 encoded PDF document."
+    },
+    "image": {
+      "type": "string",
+      "description": "Image source for watermark."
+    },
+    "text": {
+      "type": "string",
+      "description": "Text to use as watermark."
+    },
+    "font_size": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 300,
+      "default": 16,
+      "description": "Font size for text watermark (5-300)."
+    },
+    "font_family": {
+      "type": "string",
+      "enum": [
+        "Helvetica",
+        "Times",
+        "Courier"
+      ],
+      "default": "Helvetica",
+      "description": "Font family for text watermark."
+    },
+    "font_color": {
+      "type": "string",
+      "pattern": "^#?[0-9a-fA-F]{3}([0-9a-fA-F]{3})?$",
+      "default": "000000",
+      "description": "Font color in hexadecimal (e.g. #000000 or 000000)."
+    },
+    "font_opacity": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 100,
+      "description": "Font opacity percentage (0-100)."
+    },
+    "font_bold": {
+      "type": "boolean",
+      "default": false,
+      "description": "Bold font for text watermark."
+    },
+    "font_italic": {
+      "type": "boolean",
+      "default": false,
+      "description": "Italic font for text watermark."
+    },
+    "offset_x": {
+      "type": "string",
+      "default": "center",
+      "description": "Horizontal offset: 'left', 'right', 'center', or value ending with px/in/cm/mm/pt."
+    },
+    "offset_y": {
+      "type": "string",
+      "default": "middle",
+      "description": "Vertical offset: 'top', 'bottom', 'middle', or value ending with px/in/cm/mm/pt."
+    },
+    "rotate": {
+      "type": "integer",
+      "minimum": -359,
+      "maximum": 359,
+      "default": -45,
+      "description": "Rotation angle for watermark (-359 to 359)."
+    }
+  }
+}

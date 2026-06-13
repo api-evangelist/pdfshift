@@ -1,0 +1,143 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/json-schema/convertform.json",
+  "title": "ConvertForm",
+  "type": "object",
+  "properties": {
+    "source": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "Original document to convert to PDF. PDFShift will automatically detect if it's an URL and load it, or an HTML document and charge it.\nYou can also send an array of documents to convert if parallel conversions is enabled on your account. In that case, you will also need to provide the webhook parameters as this operation is asynchronous."
+    },
+    "sandbox": {
+      "type": "boolean",
+      "default": false,
+      "description": "Will generates documents that doesn't count in the credits. The generated document will come with a watermark and you are limited to 10 documents per minutes."
+    },
+    "encode": {
+      "type": "boolean",
+      "default": false,
+      "description": "Will return the generated PDF in Base64 encoded format, instead of raw."
+    },
+    "filename": {
+      "type": "string",
+      "description": "Name of the destination file.\nOnly an alphanumerical value with \"-\" or \"_\", of at least 7 chars accepted.\n\nIf given, the response **will not be the PDF**, but a JSON response containing an url parameter to an Amazon S3 bucket, to download the file.\nThe file will be **kept for 2 days**, then automatically deleted.\n\nSee [Saving the document to Amazon S3](/docs/saving-to-s3) for an example."
+    },
+    "s3_destination": {
+      "type": "string",
+      "description": "Path to your S3 bucket, in order to save the converted PDF directly into your AWS S3 account.\nUse a full path value like\n`s3://doc-example-bucket/pdfshift/upload/86aa3ede7d05.pdf`.\n\nSee [Saving to your Amazon S3](/docs/saving/to-s3) for more details.\n\nNote that you can also save to [Google Cloud Storage](/docs/saving/to-gs) and reach out to us if you want to store to other services as well"
+    },
+    "use_print": {
+      "type": "boolean",
+      "default": false,
+      "description": "Use the print stylesheet instead of the general one."
+    },
+    "css": {
+      "type": "string",
+      "description": "Will append this CSS styles to the document before saving it. Can be an URL or a String of CSS rules."
+    },
+    "javascript": {
+      "type": "string",
+      "description": "Will execute the given Javascript before saving the document. Can be an URL or a String of JS code."
+    },
+    "delay": {
+      "type": "integer",
+      "default": 0,
+      "minimum": 0,
+      "maximum": 10000,
+      "description": "In milliseconds. Will wait for this duration before capturing the document. Up to 10 seconds max."
+    },
+    "timeout": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 900,
+      "description": "If provided, will kill the page loading at a specified time without stopping with a TimeoutError. Value in seconds."
+    },
+    "wait_for": {
+      "type": "string",
+      "description": "Name of a function available globally.\nWhen present, PDFShift will wait for this function to return a truthy value (true, 1, a string, etc) or up to 30 seconds, then proceed to the conversion.\nIf the function never returns a truthy value in the allocated time, the conversion will fail with an error."
+    },
+    "wait_for_network": {
+      "type": "boolean",
+      "default": true,
+      "description": "If set to true, will wait that there was no network requests in the last 500ms."
+    },
+    "ignore_long_polling": {
+      "type": "boolean",
+      "default": false,
+      "description": "Will not wait for long-polling request to end before generating the document.\nThis can be helpful when loading a page that have websockets or long running queries that have no impact on the generated document.\nRequires `wait_for_network` to be set to true, otherwise the conversion never waits for network requests at all."
+    },
+    "disable_javascript": {
+      "type": "boolean",
+      "default": false,
+      "description": "Will not execute the javascript at all in the document."
+    },
+    "lazy_load_images": {
+      "type": "boolean",
+      "default": false,
+      "description": "When set to true, will scroll the page to the bottom to trigger loading the images with lazy loading before saving the document."
+    },
+    "raise_for_status": {
+      "type": "boolean",
+      "default": false,
+      "description": "Won't convert the document if the loaded source (when HTTP) returns a non 2XX response."
+    },
+    "webhook": {
+      "oneOf": [
+        {
+          "$ref": "#/components/schemas/WebhookForm"
+        },
+        {
+          "type": "string",
+          "format": "uri"
+        }
+      ],
+      "description": "An URL where we will send a POST request containing a JSON body similar to when you use the filename parameter.\nThe JSON response will contain a URL key that points to your file, stored on Amazon S3.\n\n**Note**: When the conversion fail, we also do a `POST` request to your endpoint, but with an `error` key instead.\n\nWe recommend you to first check if the body contains the `error` before processing the document, and act accordingly."
+    },
+    "auth": {
+      "$ref": "#/components/schemas/BasicAuthForm",
+      "description": "Basic authentication that will be sent along the request to load the source when it's an URL."
+    },
+    "http_headers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "List of HTTP headers that you can pass to the request when loading the source URL."
+    },
+    "cookies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/CookieForm"
+      },
+      "description": "List of cookies you want to send along with the requests when loading the source.\nThey must be provided as an array of objects."
+    },
+    "is_hipaa": {
+      "type": "boolean",
+      "default": false,
+      "description": "When set to True, ensure the conversion's parameters are compliant to HIPAA regulations.\nThis will disable features such as `filename` or `webhook` when the `s3_destination` is managed by PDFShift, to avoid storing any sensitive documents on PDFShift's servers. See [Handling sensitive documents](https://help.pdfshift.io/how-do-you-handle-sensitive-documents) for more details."
+    },
+    "is_gdpr": {
+      "type": "boolean",
+      "default": false,
+      "description": "When set to True, ensure the conversion's parameters are compliant to GDPR regulations.\nThis will disable features such as `filename` or `webhook` when the `s3_destination` is managed by PDFShift, to avoid storing any sensitive documents on PDFShift's servers. See [Handling sensitive documents](https://help.pdfshift.io/how-do-you-handle-sensitive-documents) for more details."
+    },
+    "log_request": {
+      "type": "boolean",
+      "default": false,
+      "description": "Log the request parameters. Useful for debugging purposes with PDFShift support."
+    }
+  },
+  "required": [
+    "source"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/json-schema/protectionform.json",
+  "title": "ProtectionForm",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string",
+      "default": null,
+      "description": "Author metadata for the PDF."
+    },
+    "user_password": {
+      "type": "string",
+      "default": "",
+      "description": "Password required to open the PDF."
+    },
+    "owner_password": {
+      "type": "string",
+      "default": "",
+      "description": "Password required to change permissions."
+    },
+    "no_print": {
+      "type": "boolean",
+      "default": false,
+      "description": "Disallow printing of the PDF."
+    },
+    "no_copy": {
+      "type": "boolean",
+      "default": false,
+      "description": "Disallow copying content from the PDF."
+    },
+    "no_modify": {
+      "type": "boolean",
+      "default": false,
+      "description": "Disallow modifying the PDF."
+    }
+  }
+}

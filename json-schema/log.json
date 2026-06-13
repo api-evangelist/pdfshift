@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/json-schema/log.json",
+  "title": "Log",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "log": {
+      "$ref": "#/components/schemas/LogObject"
+    }
+  }
+}

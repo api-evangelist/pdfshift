@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/json-schema/templateupdateform.json",
+  "title": "TemplateUpdateForm",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the template."
+    },
+    "content": {
+      "type": "string",
+      "description": "HTML content of the template."
+    }
+  },
+  "required": [
+    "content"
+  ]
+}
