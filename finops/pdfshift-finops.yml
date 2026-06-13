@@ -1,0 +1,41 @@
+name: PDFShift FinOps
+description: Financial operations guidance for managing PDFShift API costs, credit consumption, and optimization strategies.
+url: https://pdfshift.io/pricing/
+costModel: credit-based
+credits:
+  description: Each API conversion consumes one credit. Credits reset monthly on the billing date.
+  freeMonthly: 50
+  sandbox: Sandbox conversions (using the sandbox parameter) do not consume credits and are free for testing.
+plans:
+  - name: Free
+    monthlyCredits: 50
+    pricePerCredit: 0
+  - name: Startup
+    monthlyPrice: 9
+    monthlyCredits: 500
+    pricePerCredit: 0.018
+    effectiveCostPerCredit: 0.04
+  - name: Boost
+    monthlyPrice: 24
+    monthlyCredits: 2500
+    pricePerCredit: 0.0096
+    effectiveCostPerCredit: 0.03
+  - name: Growth
+    monthlyPrice: 39
+    monthlyCredits: 5000
+    pricePerCredit: 0.0078
+    effectiveCostPerCredit: 0.025
+optimization:
+  - Use sandbox mode during development and testing to avoid consuming production credits.
+  - Choose the Growth plan for large-volume workloads to reduce per-conversion cost to $0.025.
+  - Monitor the X-RateLimit-Remaining response header to track real-time credit consumption.
+  - Use the /v3/usage endpoint to programmatically query credit balance before batch jobs.
+  - Export directly to Amazon S3 or Google Cloud Storage to avoid egress and storage overhead.
+  - Use asynchronous webhook callbacks for large batches to avoid timeout-related retries.
+  - Select page ranges (pageRanges parameter) to convert only needed pages, reducing credit usage on large documents.
+billing:
+  cycle: monthly
+  annualDiscount: true
+  currency: USD
+  trialAvailable: true
+  creditCardRequired: false

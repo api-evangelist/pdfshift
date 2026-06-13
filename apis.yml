@@ -1,0 +1,58 @@
+aid: pdfshift
+name: PDFShift
+description: PDFShift is an HTML to PDF conversion REST API that generates pixel-perfect PDFs from HTML and CSS using Chromium rendering. It supports custom headers, footers, watermarks, password protection, JavaScript execution, screenshot capture, webhook notifications, and direct export to Amazon S3 and Google Cloud Storage.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - PDF
+  - HTML to PDF
+  - Document Conversion
+  - Screenshot
+  - Chromium
+  - REST API
+apis:
+  - aid: pdfshift:pdfshift-api
+    name: PDFShift API
+    description: REST API for converting HTML documents and URLs to PDF, PNG, JPEG, and WEBP formats with full CSS and JavaScript support, custom page settings, and cloud storage integration.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.pdfshift.io/
+    baseURL: https://api.pdfshift.io/v3
+    tags:
+      - PDF
+      - HTML to PDF
+      - Document Conversion
+      - Screenshot
+    properties:
+      - type: Documentation
+        url: https://docs.pdfshift.io/
+      - type: OpenAPI
+        url: https://docs.pdfshift.io/api-reference/openapi.json
+common:
+  - type: Website
+    url: https://pdfshift.io/
+  - type: Documentation
+    url: https://docs.pdfshift.io/
+  - type: GitHubOrg
+    url: https://github.com/pdfshift
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/pdfshift-io
+  - type: Blog
+    url: https://pdfshift.io/guides/
+  - type: Pricing
+    url: https://pdfshift.io/pricing/
+  - type: StatusPage
+    url: https://status.pdfshift.io/
+  - type: X
+    url: https://x.com/pdfshift
+  - type: Plans
+    url: plans/pdfshift-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/pdfshift-rate-limits.yml
+  - type: FinOps
+    url: finops/pdfshift-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

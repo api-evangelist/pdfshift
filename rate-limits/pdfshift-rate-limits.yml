@@ -1,0 +1,18 @@
+name: PDFShift Rate Limits
+description: Rate limiting details for the PDFShift HTML-to-PDF conversion API. Limits are communicated via response headers and vary by plan and server load.
+url: https://docs.pdfshift.io/
+headers:
+  - name: X-RateLimit-Limit
+    description: Maximum number of requests allowed within the current rate-limit window.
+  - name: X-RateLimit-Remaining
+    description: Number of requests remaining in the current rate-limit window.
+  - name: X-RateLimit-Reset
+    description: Unix timestamp indicating when the current rate-limit window resets.
+statusCodes:
+  - code: 429
+    description: Too Many Requests — the client has exceeded the allowed rate limit. Retry after the X-RateLimit-Reset timestamp.
+notes:
+  - Rate limits apply per API key.
+  - Sandbox conversions (watermarked, using the sandbox parameter) do not consume credits but may still be subject to rate limits.
+  - Asynchronous requests via webhooks can help manage throughput for high-volume workloads.
+  - Concurrent conversion limits vary by plan; contact support for Enterprise-level concurrency details.

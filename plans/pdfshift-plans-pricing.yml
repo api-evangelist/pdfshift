@@ -1,0 +1,71 @@
+name: PDFShift Plans and Pricing
+description: Subscription plans for PDFShift HTML-to-PDF conversion API, billed monthly with a free tier requiring no credit card.
+url: https://pdfshift.io/pricing/
+plans:
+  - name: Free
+    description: Entry-level plan with no credit card required, ideal for evaluation and light usage.
+    price: 0
+    currency: USD
+    unit: month
+    credits: 50
+    features:
+      - 50 monthly credits
+      - Sandbox mode for watermarked test conversions
+      - REST API access
+      - Node.js, Python, PHP, Ruby, Go, C# SDKs
+  - name: Startup
+    description: Starter paid plan for small applications and individual developers.
+    price: 9
+    currency: USD
+    unit: month
+    credits: 500
+    costPerCredit: 0.04
+    features:
+      - 500 monthly credits
+      - 5MB dynamic file size limit per conversion
+      - Custom headers and footers
+      - Asynchronous requests (webhooks)
+      - Amazon S3 and Google Cloud Storage export
+      - Password protection and watermarks
+      - JavaScript rendering via Chromium
+  - name: Boost
+    description: Mid-tier plan for growing teams with higher conversion volume needs.
+    price: 24
+    currency: USD
+    unit: month
+    credits: 2500
+    costPerCredit: 0.03
+    features:
+      - 2500 monthly credits
+      - 5MB dynamic file size limit per conversion
+      - Custom headers and footers
+      - Asynchronous requests (webhooks)
+      - Amazon S3 and Google Cloud Storage export
+      - Password protection and watermarks
+      - JavaScript rendering via Chromium
+  - name: Growth
+    description: High-volume plan for established applications with frequent PDF generation requirements.
+    price: 39
+    currency: USD
+    unit: month
+    credits: 5000
+    costPerCredit: 0.025
+    features:
+      - 5000 monthly credits
+      - 5MB dynamic file size limit per conversion
+      - Custom headers and footers
+      - Asynchronous requests (webhooks)
+      - Amazon S3 and Google Cloud Storage export
+      - Password protection and watermarks
+      - JavaScript rendering via Chromium
+  - name: Enterprise
+    description: Custom plan for large organizations requiring SLAs, dedicated support, and tailored capacity.
+    price: custom
+    currency: USD
+    unit: month
+    features:
+      - Custom monthly credit allocation
+      - Service Level Agreement (SLA)
+      - Priority support
+      - Custom file size limits
+      - Dedicated account management
