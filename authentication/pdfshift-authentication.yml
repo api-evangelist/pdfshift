@@ -1,0 +1,20 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/pdfshift-openapi.json
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKeyHeader
+  type: apiKey
+  in: header
+  parameter: X-API-Key
+  description: |-
+    Authenticate your account by including your secret key in API requests.
+    You can manage your API keys in the [Dashboard](https://app.pdfshift.io/dashboard/).
+
+    Authentication to the API is performed by using the HTTP Header X-API-Key.
+  sources:
+  - openapi/pdfshift-openapi.json
