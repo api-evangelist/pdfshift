@@ -33,6 +33,8 @@ apis:
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/openapi/pdfshift-openapi.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/pdfshift-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/pdfshift-vulnerability-disclosure.yml
   - type: DomainSecurity
