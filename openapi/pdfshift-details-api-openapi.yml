@@ -1,0 +1,218 @@
+openapi: 3.0.3
+info:
+  title: PDFShift API Documentation account details API
+  version: '3.0'
+  description: 'This is the documentation for the PDFShift API.
+
+
+    Our aim here is to provide you with a clear, concise and complete set of tool to generate the PDF you want.
+
+
+    Don''t forget to add the `sandbox` parameter to `True` while testing the API, this won''t use your credits and generate free PDF (with a watermark).
+
+    But if you forgot to set it, don''t worry ; Send us a message and we''ll reset your credits usage.'
+  termsOfService: https://pdfshift.io/terms
+  contact:
+    name: PDFShift
+    url: https://pdfshift.io
+    email: support@pdfshift.io
+  x-logo:
+    url: https://pdfshift.io/images/favicons/android-chrome-512x512.png
+servers:
+- url: https://api.pdfshift.io/v3
+  description: ''
+  x-last-modified: 1764750693905
+security:
+- apiKeyHeader: []
+tags:
+- name: details
+paths:
+  /account:
+    x-last-modified: 1764751450778
+    get:
+      tags:
+      - details
+      summary: Account details
+      description: Returns the account details for the connected API Key
+      responses:
+        '200':
+          description: Account details
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+              example:
+                success: true
+                account:
+                  name: Richard Hendricks
+                  firstname: Richard
+                  email: richard@piedpiper.com
+                  created: 1526561399000
+                  company_name: PiedPiper
+                  company_details: 'Hacker Hostel,
+
+                    5230 Newell Road,
+
+                    Palo Alto, CA 94303'
+                  company_vat: null
+                  country: US
+                  renew_date: 1763683200000
+                  avatar: https://secure.gravatar.com/avatar/584ac79c82c64934d475251b46f78f4a?d=mm&s=96
+                  billing_email: jared@piedpiper.com
+                  plan:
+                    display: Business
+                    name: business
+                    credits: 50000
+                    filesize: 1250
+                    timeout: 100
+                    price: 99
+                    yearly: false
+                    overage: 20
+                  hard_limit: null
+                  subscription_ends_at: null
+          x-last-modified: 1764751907156
+        '401':
+          description: Unauthorized. Invalid auth key, missing, or disabled.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too Many Requests. You have been rate limited.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+    Account:
+      type: object
+      properties:
+        success:
+          type: boolean
+        account:
+          type: object
+          properties:
+            name:
+              type: string
+            firstname:
+              type: string
+            email:
+              type: string
+              format: email
+            created:
+              type: integer
+              format: int64
+            company_name:
+              type: string
+            company_details:
+              type: string
+              default: null
+            company_vat:
+              type: string
+              default: null
+            country:
+              type: string
+            renew_date:
+              type: integer
+              format: int64
+            avatar:
+              type: string
+              format: uri
+            billing_email:
+              type: string
+              default: null
+              format: email
+            plan:
+              type: object
+              default: null
+              properties:
+                display:
+                  type: string
+                name:
+                  type: string
+                credits:
+                  type: integer
+                  format: int32
+                filesize:
+                  type: integer
+                  format: int32
+                timeout:
+                  type: integer
+                  format: int32
+                price:
+                  type: number
+                  format: float
+                yearly:
+                  type: boolean
+                overage:
+                  type: number
+                  format: float
+            hard_limit:
+              type: integer
+              default: null
+              format: int32
+            subscription_ends_at:
+              type: integer
+              default: null
+              format: int64
+      x-last-modified: 176475072263
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      description: 'Authenticate your account by including your secret key in API requests.
+
+        You can manage your API keys in the [Dashboard](https://app.pdfshift.io/dashboard/).
+
+
+        Authentication to the API is performed by using the HTTP Header X-API-Key.'
+      name: X-API-Key
+      in: header
+      x-last-modified: 1764750344730
+externalDocs:
+  description: You can access our documentation online by visiting https://docs.pdfshift.io
+  url: https://docs.pdfshift.io

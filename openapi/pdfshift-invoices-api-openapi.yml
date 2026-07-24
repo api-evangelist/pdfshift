@@ -1,0 +1,200 @@
+openapi: 3.0.3
+info:
+  title: PDFShift API Documentation account Invoices API
+  version: '3.0'
+  description: 'This is the documentation for the PDFShift API.
+
+
+    Our aim here is to provide you with a clear, concise and complete set of tool to generate the PDF you want.
+
+
+    Don''t forget to add the `sandbox` parameter to `True` while testing the API, this won''t use your credits and generate free PDF (with a watermark).
+
+    But if you forgot to set it, don''t worry ; Send us a message and we''ll reset your credits usage.'
+  termsOfService: https://pdfshift.io/terms
+  contact:
+    name: PDFShift
+    url: https://pdfshift.io
+    email: support@pdfshift.io
+  x-logo:
+    url: https://pdfshift.io/images/favicons/android-chrome-512x512.png
+servers:
+- url: https://api.pdfshift.io/v3
+  description: ''
+  x-last-modified: 1764750693905
+security:
+- apiKeyHeader: []
+tags:
+- name: Invoices
+paths:
+  /invoices:
+    x-last-modified: 1764751463833
+    get:
+      tags:
+      - Invoices
+      summary: Invoices list
+      description: ''
+      responses:
+        '200':
+          description: List of invoices
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoices'
+              example:
+                success: true
+                invoices:
+                  has_more: true
+                  data:
+                  - created: 1763123660000
+                    amount: 99
+                    reference: PS202511-00010
+                    download_url: https://api.pdfshift.io/v3/invoices/PS202511-00110.pdf?token=xxx_token_xxx
+                  - created: 1760445289000
+                    amount: 99
+                    reference: PS202510-00109
+                    download_url: https://api.pdfshift.io/v3/invoices/PS202510-00109.pdf?token=xxx_token_xxx
+                  - created: 1757853195000
+                    amount: 99
+                    reference: PS202509-00108
+                    download_url: https://api.pdfshift.io/v3/invoices/PS202509-00108.pdf?token=xxx_token_xxx
+                  - created: 1755180347000
+                    amount: 99
+                    reference: PS202508-00107
+                    download_url: https://api.pdfshift.io/v3/invoices/PS202508-00107.pdf?token=xxx_token_xxx
+                  - created: 1752496441000
+                    amount: 99
+                    reference: PS202507-00106
+                    download_url: https://api.pdfshift.io/v3/invoices/PS202507-00106.pdf?token=xxx_token_xxx
+                  - created: 1749904431000
+                    amount: 99
+                    reference: PS202506-00105
+                    download_url: https://api.pdfshift.io/v3/invoices/PS202506-00105.pdf?token=xxx_token_xxx
+                  - created: 1747226035000
+                    amount: 99
+                    reference: PS202505-00104
+                    download_url: https://api.pdfshift.io/v3/invoices/PS202505-00104.pdf?token=xxx_token_xxx
+                  - created: 1744634029000
+                    amount: 99
+                    reference: PS202504-00103
+                    download_url: https://api.pdfshift.io/v3/invoices/PS202504-00103.pdf?token=xxx_token_xxx
+                  - created: 1741955686000
+                    amount: 99
+                    reference: PS202503-00102
+                    download_url: https://api.pdfshift.io/v3/invoices/PS202503-00102.pdf?token=xxx_token_xxx
+                  - created: 1739536453000
+                    amount: 99
+                    reference: PS202502-00101
+                    download_url: https://api.pdfshift.io/v3/invoices/PS202502-00101.pdf?token=xxx_token_xxx
+                  limit: 10
+                  page: 0
+                  total: 28
+          x-last-modified: 1764751440861
+        '401':
+          description: Unauthorized. Invalid auth key, missing, or disabled.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too Many Requests. You have been rate limited.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+    Invoices:
+      type: object
+      properties:
+        success:
+          type: boolean
+        invoices:
+          type: object
+          properties:
+            has_more:
+              type: boolean
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  created:
+                    type: integer
+                    format: int64
+                  amount:
+                    type: number
+                    format: float
+                  reference:
+                    type: string
+                  download_url:
+                    type: string
+                    format: uri
+            limit:
+              type: integer
+              format: int32
+            page:
+              type: integer
+              format: int32
+            total:
+              type: integer
+              format: int32
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      description: 'Authenticate your account by including your secret key in API requests.
+
+        You can manage your API keys in the [Dashboard](https://app.pdfshift.io/dashboard/).
+
+
+        Authentication to the API is performed by using the HTTP Header X-API-Key.'
+      name: X-API-Key
+      in: header
+      x-last-modified: 1764750344730
+externalDocs:
+  description: You can access our documentation online by visiting https://docs.pdfshift.io
+  url: https://docs.pdfshift.io

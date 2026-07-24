@@ -1,0 +1,151 @@
+openapi: 3.0.3
+info:
+  title: PDFShift API Documentation account usage API
+  version: '3.0'
+  description: 'This is the documentation for the PDFShift API.
+
+
+    Our aim here is to provide you with a clear, concise and complete set of tool to generate the PDF you want.
+
+
+    Don''t forget to add the `sandbox` parameter to `True` while testing the API, this won''t use your credits and generate free PDF (with a watermark).
+
+    But if you forgot to set it, don''t worry ; Send us a message and we''ll reset your credits usage.'
+  termsOfService: https://pdfshift.io/terms
+  contact:
+    name: PDFShift
+    url: https://pdfshift.io
+    email: support@pdfshift.io
+  x-logo:
+    url: https://pdfshift.io/images/favicons/android-chrome-512x512.png
+servers:
+- url: https://api.pdfshift.io/v3
+  description: ''
+  x-last-modified: 1764750693905
+security:
+- apiKeyHeader: []
+tags:
+- name: usage
+paths:
+  /credits/usage:
+    x-last-modified: 1764750838571
+    get:
+      tags:
+      - usage
+      summary: Credits usage
+      description: 'Returns the current credits usage with some details to help you know where your usage is at.
+
+
+        It contains the `total` credits, the `remaining` credits you can use for your period and the `used` number of credits.
+
+
+        The `base` value might differ from the `total` if you have enabled overage. In this case, `base` represent the default limit from your current plan, whereas `total` is the limit set in your overage. Once your credit usage reaches the `total`, the conversions will be refused.'
+      responses:
+        '200':
+          description: Current credit usage
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Credits'
+              example:
+                credits:
+                  base: 50000
+                  remaining: 49881
+                  total: 50000
+                  used: 119
+                success: true
+          x-last-modified: 1764750969372
+        '401':
+          description: Unauthorized. Invalid auth key, missing, or disabled.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too Many Requests. You have been rate limited.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+    Credits:
+      type: object
+      properties:
+        credits:
+          type: object
+          properties:
+            base:
+              type: integer
+              format: int32
+            remaining:
+              type: integer
+              format: int32
+            total:
+              type: integer
+              format: int32
+            used:
+              type: integer
+              format: int32
+        success:
+          type: boolean
+      x-last-modified: 1764750524862
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      description: 'Authenticate your account by including your secret key in API requests.
+
+        You can manage your API keys in the [Dashboard](https://app.pdfshift.io/dashboard/).
+
+
+        Authentication to the API is performed by using the HTTP Header X-API-Key.'
+      name: X-API-Key
+      in: header
+      x-last-modified: 1764750344730
+externalDocs:
+  description: You can access our documentation online by visiting https://docs.pdfshift.io
+  url: https://docs.pdfshift.io

@@ -1,0 +1,652 @@
+openapi: 3.0.3
+info:
+  title: PDFShift API Documentation account templates API
+  version: '3.0'
+  description: 'This is the documentation for the PDFShift API.
+
+
+    Our aim here is to provide you with a clear, concise and complete set of tool to generate the PDF you want.
+
+
+    Don''t forget to add the `sandbox` parameter to `True` while testing the API, this won''t use your credits and generate free PDF (with a watermark).
+
+    But if you forgot to set it, don''t worry ; Send us a message and we''ll reset your credits usage.'
+  termsOfService: https://pdfshift.io/terms
+  contact:
+    name: PDFShift
+    url: https://pdfshift.io
+    email: support@pdfshift.io
+  x-logo:
+    url: https://pdfshift.io/images/favicons/android-chrome-512x512.png
+servers:
+- url: https://api.pdfshift.io/v3
+  description: ''
+  x-last-modified: 1764750693905
+security:
+- apiKeyHeader: []
+tags:
+- name: templates
+paths:
+  /templates:
+    get:
+      tags:
+      - templates
+      summary: List templates
+      description: Returns a list of templates registered to your account.
+      responses:
+        '200':
+          description: List of templates
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Templates'
+              example:
+                success: true
+                templates:
+                  has_more: false
+                  data:
+                  - slug: test-1
+                    created: 1734076868000
+                    name: First test for templates
+                  limit: 10
+                  page: 0
+                  total: 1
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+        '401':
+          description: Unauthorized. Invalid auth key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too Many Requests. You have been rate limited.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    post:
+      tags:
+      - templates
+      summary: Create template
+      description: Creates a new template stored at PDFShift.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TemplateCreateForm'
+      responses:
+        '200':
+          description: Template created
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Template'
+              example:
+                success: true
+                template:
+                  slug: test-1
+                  created: 1734076868073
+                  name: First test for templates
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+        '401':
+          description: Unauthorized. Invalid auth key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too Many Requests. You have been rate limited.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /templates/{slug}.html:
+    get:
+      tags:
+      - templates
+      summary: Get template HTML
+      description: Returns the raw HTML content of the template.
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: HTML content
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            text/html:
+              schema:
+                type: string
+              example: <html>...</html>
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+        '401':
+          description: Unauthorized. Invalid auth key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Template not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too Many Requests. You have been rate limited.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /templates/{slug}:
+    put:
+      tags:
+      - templates
+      summary: Update template
+      description: Update the name or content of a template. Slug cannot be changed.
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TemplateUpdateForm'
+      responses:
+        '200':
+          description: Template updated
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Template'
+              example:
+                success: true
+                template:
+                  slug: test-1
+                  created: 1734076868000
+                  name: First test for templates
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+        '401':
+          description: Unauthorized. Invalid auth key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Template not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too Many Requests. You have been rate limited.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      tags:
+      - templates
+      summary: Delete template
+      description: Deletes a template by slug.
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Template deleted
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+              example:
+                success: true
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+        '401':
+          description: Unauthorized. Invalid auth key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Template not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too Many Requests. You have been rate limited.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /templates/{slug}.{ext}:
+    post:
+      tags:
+      - templates
+      summary: Generate document from template
+      description: 'Generates a document from a template using provided data. Supported extensions: html, pdf, jpeg, png, webp.'
+      parameters:
+      - name: slug
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: ext
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - html
+          - pdf
+          - jpeg
+          - png
+          - webp
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TemplateGenerateForm'
+      responses:
+        '200':
+          description: Generated document
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                type: object
+            text/html:
+              schema:
+                type: string
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+            image/png:
+              schema:
+                type: string
+                format: binary
+            image/jpeg:
+              schema:
+                type: string
+                format: binary
+            image/webp:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+        '401':
+          description: Unauthorized. Invalid auth key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Template not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too Many Requests. You have been rate limited.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Template:
+      type: object
+      properties:
+        success:
+          type: boolean
+        template:
+          type: object
+          properties:
+            slug:
+              type: string
+            created:
+              type: integer
+              format: int64
+            name:
+              type: string
+    Errors:
+      type: object
+      properties:
+        success:
+          type: boolean
+        errors:
+          type: object
+        code:
+          type: integer
+          format: int32
+    TemplateUpdateForm:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the template.
+        content:
+          type: string
+          description: HTML content of the template.
+      required:
+      - content
+    TemplateCreateForm:
+      type: object
+      properties:
+        slug:
+          type: string
+          description: Unique identifier for the template.
+        name:
+          type: string
+          description: Name of the template.
+        content:
+          type: string
+          description: HTML content of the template.
+      required:
+      - slug
+      - name
+      - content
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+    Templates:
+      type: object
+      properties:
+        success:
+          type: boolean
+        templates:
+          type: object
+          properties:
+            has_more:
+              type: boolean
+            data:
+              type: array
+              items:
+                type: object
+                properties:
+                  slug:
+                    type: string
+                  created:
+                    type: integer
+                    format: int64
+                  name:
+                    type: string
+            limit:
+              type: integer
+              format: int32
+            page:
+              type: integer
+              format: int32
+            total:
+              type: integer
+              format: int32
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      description: 'Authenticate your account by including your secret key in API requests.
+
+        You can manage your API keys in the [Dashboard](https://app.pdfshift.io/dashboard/).
+
+
+        Authentication to the API is performed by using the HTTP Header X-API-Key.'
+      name: X-API-Key
+      in: header
+      x-last-modified: 1764750344730
+externalDocs:
+  description: You can access our documentation online by visiting https://docs.pdfshift.io
+  url: https://docs.pdfshift.io

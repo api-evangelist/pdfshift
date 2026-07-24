@@ -1,0 +1,367 @@
+openapi: 3.0.3
+info:
+  title: PDFShift API Documentation account Logs API
+  version: '3.0'
+  description: 'This is the documentation for the PDFShift API.
+
+
+    Our aim here is to provide you with a clear, concise and complete set of tool to generate the PDF you want.
+
+
+    Don''t forget to add the `sandbox` parameter to `True` while testing the API, this won''t use your credits and generate free PDF (with a watermark).
+
+    But if you forgot to set it, don''t worry ; Send us a message and we''ll reset your credits usage.'
+  termsOfService: https://pdfshift.io/terms
+  contact:
+    name: PDFShift
+    url: https://pdfshift.io
+    email: support@pdfshift.io
+  x-logo:
+    url: https://pdfshift.io/images/favicons/android-chrome-512x512.png
+servers:
+- url: https://api.pdfshift.io/v3
+  description: ''
+  x-last-modified: 1764750693905
+security:
+- apiKeyHeader: []
+tags:
+- name: Logs
+paths:
+  /logs/{request_id}:
+    x-last-modified: 1764751485019
+    get:
+      tags:
+      - Logs
+      summary: Get log by request ID
+      description: ''
+      parameters:
+      - name: request_id
+        in: path
+        required: true
+        description: The unique request ID of the log entry to retrieve.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Returns a specific log entry by its request ID
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Log'
+              example:
+                success: true
+                log:
+                  id: 12345500
+                  duration: 2191
+                  executed: 1764753251000
+                  credits: 1
+                  sandbox: false
+                  filesize: 305345
+                  error: null
+                  code: 200
+                  user_agent: Python/3.9 aiohttp/3.10.5
+                  request_id: 40bad9f3-0eb8-4de3-82de-3886ff9522ed
+                  query: null
+          x-last-modified: 1764750969372
+        '401':
+          description: Unauthorized. Invalid auth key, missing, or disabled.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too Many Requests. You have been rate limited.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /logs:
+    x-last-modified: 1764751475763
+    get:
+      tags:
+      - Logs
+      summary: List recent logs
+      parameters:
+      - name: limit
+        in: query
+        description: Number of items to return (between 5 and 100, defaults to 20)
+        required: false
+        schema:
+          type: integer
+          minimum: 5
+          maximum: 100
+          default: 20
+      - name: status
+        in: query
+        description: 'Filter logs by status: ''error'', ''success'', or ''all'' (default: ''all'')'
+        required: false
+        schema:
+          type: string
+          enum:
+          - error
+          - success
+          - all
+          default: all
+      - name: key
+        in: query
+        description: API Key to filter the results to. Default is null, which includes all requests from all API keys.
+        required: false
+        schema:
+          type: string
+          default: null
+      - name: cursor
+        in: query
+        description: Returns the items that occur after the given log ID.
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: before
+        in: query
+        description: Returns the events that occurred before the given time. Format is ISO datetime.
+        required: false
+        schema:
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: List of recents logs. Can be filtered by API Key, Status (error/success) and time range.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Logs'
+              example:
+                success: true
+                logs:
+                  has_more: true
+                  data:
+                  - id: 12345500
+                    duration: 2191
+                    executed: 1764753251000
+                    credits: 1
+                    sandbox: false
+                    filesize: 305345
+                    error: null
+                    code: 200
+                    user_agent: Python/3.9 aiohttp/3.10.5
+                    request_id: 40bad9f3-0eb8-4de3-82de-3886ff9522ed
+                    query: null
+                  - id: 12345501
+                    duration: 2385
+                    executed: 1764753169000
+                    credits: 1
+                    sandbox: false
+                    filesize: 310593
+                    error: null
+                    code: 200
+                    user_agent: Python/3.9 aiohttp/3.10.5
+                    request_id: e8079824-f786-45b1-a8cb-a35fe916ea8d
+                    query: null
+                  - id: 12345502
+                    duration: 2377
+                    executed: 1764752870000
+                    credits: 1
+                    sandbox: false
+                    filesize: 306883
+                    error: null
+                    code: 200
+                    user_agent: Python/3.9 aiohttp/3.10.5
+                    request_id: 22bf9320-455a-4e91-bda4-b90cfb0e4eb0
+                    query: null
+                  - id: 12345503
+                    duration: 2209
+                    executed: 1764752729000
+                    credits: 1
+                    sandbox: false
+                    filesize: 334962
+                    error: null
+                    code: 200
+                    user_agent: Python/3.9 aiohttp/3.10.5
+                    request_id: 6ac98706-9dbe-4ba2-acaf-3ad2313048d6
+                    query: null
+                  - id: 12345504
+                    duration: 1419
+                    executed: 1764616844000
+                    credits: 1
+                    sandbox: false
+                    filesize: 300952
+                    error: null
+                    code: 200
+                    user_agent: Python/3.9 aiohttp/3.10.5
+                    request_id: 63a0fdbf-a07c-4c65-a8f7-4ad09db5530c
+                    query: null
+                  limit: 5
+                  page: 0
+                  total: 233
+          x-last-modified: 1764750969372
+        '401':
+          description: Unauthorized. Invalid auth key, missing, or disabled.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Too Many Requests. You have been rate limited.
+          headers:
+            X-RateLimit-Remaining:
+              description: The number of requests remaining in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Limit:
+              description: The maximum number of requests allowed in the current rate limit window.
+              schema:
+                type: integer
+            X-RateLimit-Reset:
+              description: The time at which the current rate limit window resets (Unix timestamp).
+              schema:
+                type: integer
+                format: int64
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal Server Error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Log:
+      type: object
+      properties:
+        success:
+          type: boolean
+        log:
+          $ref: '#/components/schemas/LogObject'
+    LogObject:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        duration:
+          type: integer
+          format: int32
+        executed:
+          type: integer
+          format: int64
+        credits:
+          type: integer
+          format: int32
+        sandbox:
+          type: boolean
+        filesize:
+          type: integer
+          format: int32
+        error:
+          type: string
+          default: null
+        code:
+          type: integer
+          format: int32
+        user_agent:
+          type: string
+          default: null
+        request_id:
+          type: string
+        query:
+          type: string
+          default: null
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
+    Logs:
+      type: object
+      properties:
+        success:
+          type: boolean
+        logs:
+          type: object
+          properties:
+            has_more:
+              type: boolean
+            data:
+              type: array
+              items:
+                $ref: '#/components/schemas/LogObject'
+            limit:
+              type: integer
+              format: int32
+            page:
+              type: integer
+              format: int32
+            total:
+              type: integer
+              format: int32
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      description: 'Authenticate your account by including your secret key in API requests.
+
+        You can manage your API keys in the [Dashboard](https://app.pdfshift.io/dashboard/).
+
+
+        Authentication to the API is performed by using the HTTP Header X-API-Key.'
+      name: X-API-Key
+      in: header
+      x-last-modified: 1764750344730
+externalDocs:
+  description: You can access our documentation online by visiting https://docs.pdfshift.io
+  url: https://docs.pdfshift.io
