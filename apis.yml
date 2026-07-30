@@ -1,7 +1,20 @@
 aid: pdfshift
 name: PDFShift
 description: PDFShift is an HTML to PDF conversion REST API that generates pixel-perfect PDFs from HTML and CSS using Chromium rendering. It supports custom headers, footers, watermarks, password protection, JavaScript execution, screenshot capture, webhook notifications, and direct export to Amazon S3 and Google Cloud Storage.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: open
+  trial: false
+  try_now: true
+  public: true
+  label: Freemium · Open access
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/pdfshift.png
 url: https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -14,24 +27,102 @@ tags:
   - Chromium
   - REST API
 apis:
-  - aid: pdfshift:pdfshift-api
-    name: PDFShift API
-    description: REST API for converting HTML documents and URLs to PDF, PNG, JPEG, and WEBP formats with full CSS and JavaScript support, custom page settings, and cloud storage integration.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.pdfshift.io/
-    baseURL: https://api.pdfshift.io/v3
-    tags:
-      - PDF
-      - HTML to PDF
-      - Document Conversion
-      - Screenshot
-    properties:
-      - type: Documentation
-        url: https://docs.pdfshift.io/
-      - type: OpenAPI
-        url: https://api.pdfshift.io/openapi.json
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/pdfshift/refs/heads/main/openapi/pdfshift-openapi.json
+- aid: pdfshift:pdfshift-account-api
+  name: PDFShift account API
+  description: The account API from PDFShift — 1 operation(s) for account.
+  humanURL: https://docs.pdfshift.io/
+  baseURL: https://api.pdfshift.io/v3
+  tags:
+  - account
+  properties:
+  - type: OpenAPI
+    url: openapi/pdfshift-account-api-openapi.yml
+  - type: Documentation
+    url: https://docs.pdfshift.io/
+- aid: pdfshift:pdfshift-convert-api
+  name: PDFShift Convert API
+  description: The Convert API from PDFShift — 4 operation(s) for convert.
+  humanURL: https://docs.pdfshift.io/
+  baseURL: https://api.pdfshift.io/v3
+  tags:
+  - Convert
+  properties:
+  - type: OpenAPI
+    url: openapi/pdfshift-convert-api-openapi.yml
+  - type: Documentation
+    url: https://docs.pdfshift.io/
+- aid: pdfshift:pdfshift-credits-api
+  name: PDFShift credits API
+  description: The credits API from PDFShift — 1 operation(s) for credits.
+  humanURL: https://docs.pdfshift.io/
+  baseURL: https://api.pdfshift.io/v3
+  tags:
+  - credits
+  properties:
+  - type: OpenAPI
+    url: openapi/pdfshift-credits-api-openapi.yml
+  - type: Documentation
+    url: https://docs.pdfshift.io/
+- aid: pdfshift:pdfshift-details-api
+  name: PDFShift details API
+  description: The details API from PDFShift — 1 operation(s) for details.
+  humanURL: https://docs.pdfshift.io/
+  baseURL: https://api.pdfshift.io/v3
+  tags:
+  - details
+  properties:
+  - type: OpenAPI
+    url: openapi/pdfshift-details-api-openapi.yml
+  - type: Documentation
+    url: https://docs.pdfshift.io/
+- aid: pdfshift:pdfshift-invoices-api
+  name: PDFShift Invoices API
+  description: The Invoices API from PDFShift — 1 operation(s) for invoices.
+  humanURL: https://docs.pdfshift.io/
+  baseURL: https://api.pdfshift.io/v3
+  tags:
+  - Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/pdfshift-invoices-api-openapi.yml
+  - type: Documentation
+    url: https://docs.pdfshift.io/
+- aid: pdfshift:pdfshift-logs-api
+  name: PDFShift Logs API
+  description: The Logs API from PDFShift — 2 operation(s) for logs.
+  humanURL: https://docs.pdfshift.io/
+  baseURL: https://api.pdfshift.io/v3
+  tags:
+  - Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/pdfshift-logs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.pdfshift.io/
+- aid: pdfshift:pdfshift-templates-api
+  name: PDFShift templates API
+  description: The templates API from PDFShift — 4 operation(s) for templates.
+  humanURL: https://docs.pdfshift.io/
+  baseURL: https://api.pdfshift.io/v3
+  tags:
+  - templates
+  properties:
+  - type: OpenAPI
+    url: openapi/pdfshift-templates-api-openapi.yml
+  - type: Documentation
+    url: https://docs.pdfshift.io/
+- aid: pdfshift:pdfshift-usage-api
+  name: PDFShift usage API
+  description: The usage API from PDFShift — 1 operation(s) for usage.
+  humanURL: https://docs.pdfshift.io/
+  baseURL: https://api.pdfshift.io/v3
+  tags:
+  - usage
+  properties:
+  - type: OpenAPI
+    url: openapi/pdfshift-usage-api-openapi.yml
+  - type: Documentation
+    url: https://docs.pdfshift.io/
 common:
   - type: AgenticAccess
     url: agentic-access/pdfshift-agentic-access.yml
