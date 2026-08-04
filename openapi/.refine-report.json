@@ -1,0 +1,30 @@
+{
+  "provider": "pdfshift",
+  "sources": [
+    "pdfshift-account-api-openapi.yml",
+    "pdfshift-convert-api-openapi.yml",
+    "pdfshift-credits-api-openapi.yml",
+    "pdfshift-details-api-openapi.yml",
+    "pdfshift-invoices-api-openapi.yml",
+    "pdfshift-logs-api-openapi.yml",
+    "pdfshift-templates-api-openapi.yml",
+    "pdfshift-usage-api-openapi.yml"
+  ],
+  "outputs": [
+    "pdfshift-account-api-openapi.yml",
+    "pdfshift-convert-api-openapi.yml",
+    "pdfshift-credits-api-openapi.yml",
+    "pdfshift-details-api-openapi.yml",
+    "pdfshift-invoices-api-openapi.yml",
+    "pdfshift-logs-api-openapi.yml",
+    "pdfshift-templates-api-openapi.yml",
+    "pdfshift-usage-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [
+    "pdfshift-templates-api-openapi.yml: dangling $ref: #/components/schemas/TemplateGenerateForm"
+  ],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
