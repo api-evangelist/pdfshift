@@ -1,0 +1,292 @@
+{
+  "item": [
+    {
+      "id": "7ad6aa3f-b4b9-49bc-8402-a7c65bd6e73f",
+      "name": "Invoices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "86319f08-34b2-48fc-adcc-5fcf1ad8b903",
+          "name": "Invoices list",
+          "request": {
+            "name": "Invoices list",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ce4cf58-616b-4485-a34d-6ac76defaea4",
+              "name": "List of invoices",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "634"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "634"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "2942"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"invoices\": {\n    \"has_more\": true,\n    \"data\": [\n      {\n        \"created\": 1763123660000,\n        \"amount\": 99,\n        \"reference\": \"PS202511-00010\",\n        \"download_url\": \"https://api.pdfshift.io/v3/invoices/PS202511-00110.pdf?token=xxx_token_xxx\"\n      },\n      {\n        \"created\": 1760445289000,\n        \"amount\": 99,\n        \"reference\": \"PS202510-00109\",\n        \"download_url\": \"https://api.pdfshift.io/v3/invoices/PS202510-00109.pdf?token=xxx_token_xxx\"\n      },\n      {\n        \"created\": 1757853195000,\n        \"amount\": 99,\n        \"reference\": \"PS202509-00108\",\n        \"download_url\": \"https://api.pdfshift.io/v3/invoices/PS202509-00108.pdf?token=xxx_token_xxx\"\n      },\n      {\n        \"created\": 1755180347000,\n        \"amount\": 99,\n        \"reference\": \"PS202508-00107\",\n        \"download_url\": \"https://api.pdfshift.io/v3/invoices/PS202508-00107.pdf?token=xxx_token_xxx\"\n      },\n      {\n        \"created\": 1752496441000,\n        \"amount\": 99,\n        \"reference\": \"PS202507-00106\",\n        \"download_url\": \"https://api.pdfshift.io/v3/invoices/PS202507-00106.pdf?token=xxx_token_xxx\"\n      },\n      {\n        \"created\": 1749904431000,\n        \"amount\": 99,\n        \"reference\": \"PS202506-00105\",\n        \"download_url\": \"https://api.pdfshift.io/v3/invoices/PS202506-00105.pdf?token=xxx_token_xxx\"\n      },\n      {\n        \"created\": 1747226035000,\n        \"amount\": 99,\n        \"reference\": \"PS202505-00104\",\n        \"download_url\": \"https://api.pdfshift.io/v3/invoices/PS202505-00104.pdf?token=xxx_token_xxx\"\n      },\n      {\n        \"created\": 1744634029000,\n        \"amount\": 99,\n        \"reference\": \"PS202504-00103\",\n        \"download_url\": \"https://api.pdfshift.io/v3/invoices/PS202504-00103.pdf?token=xxx_token_xxx\"\n      },\n      {\n        \"created\": 1741955686000,\n        \"amount\": 99,\n        \"reference\": \"PS202503-00102\",\n        \"download_url\": \"https://api.pdfshift.io/v3/invoices/PS202503-00102.pdf?token=xxx_token_xxx\"\n      },\n      {\n        \"created\": 1739536453000,\n        \"amount\": 99,\n        \"reference\": \"PS202502-00101\",\n        \"download_url\": \"https://api.pdfshift.io/v3/invoices/PS202502-00101.pdf?token=xxx_token_xxx\"\n      }\n    ],\n    \"limit\": 10,\n    \"page\": 0,\n    \"total\": 28\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7f28b625-e2e5-4dbd-968c-7eb8aa7c98e8",
+              "name": "Unauthorized. Invalid auth key, missing, or disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\",\n  \"code\": 3056\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88337acc-3934-4c5a-ad55-64148f85b849",
+              "name": "Too Many Requests. You have been rate limited.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "634"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "634"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "2942"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\",\n  \"code\": 3056\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "26fc6701-715e-4c31-85d9-78d34f86dcb4",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\",\n  \"code\": 3056\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.pdfshift.io/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0313b733-a0c6-413c-b587-36da8a2f6138",
+    "name": "PDFShift API Documentation account Invoices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This is the documentation for the PDFShift API.\n\nOur aim here is to provide you with a clear, concise and complete set of tool to generate the PDF you want.\n\nDon't forget to add the `sandbox` parameter to `True` while testing the API, this won't use your credits and generate free PDF (with a watermark).\nBut if you forgot to set it, don't worry ; Send us a message and we'll reset your credits usage.\n\nContact Support:\n Name: PDFShift\n Email: support@pdfshift.io",
+      "type": "text/plain"
+    }
+  }
+}

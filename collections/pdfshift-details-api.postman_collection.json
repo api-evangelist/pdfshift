@@ -1,0 +1,292 @@
+{
+  "item": [
+    {
+      "id": "319d9a34-c41c-4c3e-85b9-c9899f4687e6",
+      "name": "details",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "05fbf0c8-3b29-42cb-b54d-e20645efa0c4",
+          "name": "Account details",
+          "request": {
+            "name": "Account details",
+            "description": {
+              "content": "Returns the account details for the connected API Key",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c12e6db2-76f9-417e-bf9e-4cbb030bc439",
+              "name": "Account details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "9838"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "9838"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "6001"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"account\": {\n    \"name\": \"Richard Hendricks\",\n    \"firstname\": \"Richard\",\n    \"email\": \"richard@piedpiper.com\",\n    \"created\": 1526561399000,\n    \"company_name\": \"PiedPiper\",\n    \"company_details\": \"Hacker Hostel,\\n5230 Newell Road,\\nPalo Alto, CA 94303\",\n    \"company_vat\": null,\n    \"country\": \"US\",\n    \"renew_date\": 1763683200000,\n    \"avatar\": \"https://secure.gravatar.com/avatar/584ac79c82c64934d475251b46f78f4a?d=mm&s=96\",\n    \"billing_email\": \"jared@piedpiper.com\",\n    \"plan\": {\n      \"display\": \"Business\",\n      \"name\": \"business\",\n      \"credits\": 50000,\n      \"filesize\": 1250,\n      \"timeout\": 100,\n      \"price\": 99,\n      \"yearly\": false,\n      \"overage\": 20\n    },\n    \"hard_limit\": null,\n    \"subscription_ends_at\": null\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc49c559-d001-4ece-a067-64a1fb4ec1c9",
+              "name": "Unauthorized. Invalid auth key, missing, or disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\",\n  \"code\": 599\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9575cb62-9c0e-4f0f-b6c0-19cf8bafb1d8",
+              "name": "Too Many Requests. You have been rate limited.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "9838"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "9838"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "6001"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\",\n  \"code\": 599\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b74d25f4-8092-43ad-b475-d1aac532af2e",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\",\n  \"code\": 599\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.pdfshift.io/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2eab2384-520a-4754-b5de-c992b0a624f9",
+    "name": "PDFShift API Documentation account details API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This is the documentation for the PDFShift API.\n\nOur aim here is to provide you with a clear, concise and complete set of tool to generate the PDF you want.\n\nDon't forget to add the `sandbox` parameter to `True` while testing the API, this won't use your credits and generate free PDF (with a watermark).\nBut if you forgot to set it, don't worry ; Send us a message and we'll reset your credits usage.\n\nContact Support:\n Name: PDFShift\n Email: support@pdfshift.io",
+      "type": "text/plain"
+    }
+  }
+}

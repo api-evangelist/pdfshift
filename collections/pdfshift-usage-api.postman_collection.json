@@ -1,0 +1,297 @@
+{
+  "item": [
+    {
+      "id": "28aec139-478a-47f1-a032-1ae2957e133b",
+      "name": "usage",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "921a065a-38c2-4337-8ce6-e7b222a8df10",
+          "name": "Credits usage",
+          "request": {
+            "name": "Credits usage",
+            "description": {
+              "content": "Returns the current credits usage with some details to help you know where your usage is at.\n\nIt contains the `total` credits, the `remaining` credits you can use for your period and the `used` number of credits.\n\nThe `base` value might differ from the `total` if you have enabled overage. In this case, `base` represent the default limit from your current plan, whereas `total` is the limit set in your overage. Once your credit usage reaches the `total`, the conversions will be refused.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "credits",
+                "usage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d4a54f9-caa5-4884-a1f3-42132682949e",
+              "name": "Current credit usage",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "credits",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "2827"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "2827"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1024"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"credits\": {\n    \"base\": 50000,\n    \"remaining\": 49881,\n    \"total\": 50000,\n    \"used\": 119\n  },\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "84f16167-9119-459e-8376-a3d0fee15299",
+              "name": "Unauthorized. Invalid auth key, missing, or disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "credits",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\",\n  \"code\": 9268\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3e66dda1-06a6-4db9-b006-75b6c88bcfea",
+              "name": "Too Many Requests. You have been rate limited.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "credits",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "2827"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "2827"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1024"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\",\n  \"code\": 9268\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a3bfe055-5677-41b0-9186-1e34b9dd10cf",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "credits",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": false,\n  \"error\": \"string\",\n  \"code\": 9268\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.pdfshift.io/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "66e0225e-98ac-40da-8c91-5eaa5830f58e",
+    "name": "PDFShift API Documentation account usage API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This is the documentation for the PDFShift API.\n\nOur aim here is to provide you with a clear, concise and complete set of tool to generate the PDF you want.\n\nDon't forget to add the `sandbox` parameter to `True` while testing the API, this won't use your credits and generate free PDF (with a watermark).\nBut if you forgot to set it, don't worry ; Send us a message and we'll reset your credits usage.\n\nContact Support:\n Name: PDFShift\n Email: support@pdfshift.io",
+      "type": "text/plain"
+    }
+  }
+}

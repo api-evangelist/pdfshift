@@ -1,0 +1,692 @@
+{
+  "item": [
+    {
+      "id": "2104f67c-f30f-466b-b306-b6d90287ef70",
+      "name": "Logs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f98fbbb2-84b1-4639-8453-46a3a3b13a03",
+          "name": "Get log by request ID",
+          "request": {
+            "name": "Get log by request ID",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "logs",
+                ":request_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "request_id",
+                  "description": "(Required) The unique request ID of the log entry to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0fddafef-ce8f-47f7-81a3-35b7f50132c8",
+              "name": "Returns a specific log entry by its request ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs",
+                    ":request_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "request_id",
+                      "description": "(Required) The unique request ID of the log entry to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "6077"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "6077"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "3493"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"log\": {\n    \"id\": 12345500,\n    \"duration\": 2191,\n    \"executed\": 1764753251000,\n    \"credits\": 1,\n    \"sandbox\": false,\n    \"filesize\": 305345,\n    \"error\": null,\n    \"code\": 200,\n    \"user_agent\": \"Python/3.9 aiohttp/3.10.5\",\n    \"request_id\": \"40bad9f3-0eb8-4de3-82de-3886ff9522ed\",\n    \"query\": null\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e24a7486-6ec7-4918-850e-40a7aad4dfc1",
+              "name": "Unauthorized. Invalid auth key, missing, or disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs",
+                    ":request_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "request_id",
+                      "description": "(Required) The unique request ID of the log entry to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 2044\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bb98549d-bfae-4ed7-95c2-87070ad87b9e",
+              "name": "Too Many Requests. You have been rate limited.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs",
+                    ":request_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "request_id",
+                      "description": "(Required) The unique request ID of the log entry to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "6077"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "6077"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "3493"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 2044\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b6d14d2-715c-42a7-95d0-f1438455e2ea",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs",
+                    ":request_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "request_id",
+                      "description": "(Required) The unique request ID of the log entry to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 2044\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8f59cc77-d33e-48fb-adc5-091c666934a7",
+          "name": "List recent logs",
+          "request": {
+            "name": "List recent logs",
+            "description": {},
+            "url": {
+              "path": [
+                "logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Number of items to return (between 5 and 100, defaults to 20)"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "all",
+                  "description": "Filter logs by status: 'error', 'success', or 'all' (default: 'all')"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "",
+                  "description": "API Key to filter the results to. Default is null, which includes all requests from all API keys."
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": "<long>",
+                  "description": "Returns the items that occur after the given log ID."
+                },
+                {
+                  "disabled": false,
+                  "key": "before",
+                  "value": "<dateTime>",
+                  "description": "Returns the events that occurred before the given time. Format is ISO datetime."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f7156f74-360f-4e3f-aa84-ba7a7ab787f0",
+              "name": "List of recents logs. Can be filtered by API Key, Status (error/success) and time range.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "status",
+                      "value": "all"
+                    },
+                    {
+                      "key": "key",
+                      "value": ""
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "6077"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "6077"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "3493"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"logs\": {\n    \"has_more\": true,\n    \"data\": [\n      {\n        \"id\": 12345500,\n        \"duration\": 2191,\n        \"executed\": 1764753251000,\n        \"credits\": 1,\n        \"sandbox\": false,\n        \"filesize\": 305345,\n        \"error\": null,\n        \"code\": 200,\n        \"user_agent\": \"Python/3.9 aiohttp/3.10.5\",\n        \"request_id\": \"40bad9f3-0eb8-4de3-82de-3886ff9522ed\",\n        \"query\": null\n      },\n      {\n        \"id\": 12345501,\n        \"duration\": 2385,\n        \"executed\": 1764753169000,\n        \"credits\": 1,\n        \"sandbox\": false,\n        \"filesize\": 310593,\n        \"error\": null,\n        \"code\": 200,\n        \"user_agent\": \"Python/3.9 aiohttp/3.10.5\",\n        \"request_id\": \"e8079824-f786-45b1-a8cb-a35fe916ea8d\",\n        \"query\": null\n      },\n      {\n        \"id\": 12345502,\n        \"duration\": 2377,\n        \"executed\": 1764752870000,\n        \"credits\": 1,\n        \"sandbox\": false,\n        \"filesize\": 306883,\n        \"error\": null,\n        \"code\": 200,\n        \"user_agent\": \"Python/3.9 aiohttp/3.10.5\",\n        \"request_id\": \"22bf9320-455a-4e91-bda4-b90cfb0e4eb0\",\n        \"query\": null\n      },\n      {\n        \"id\": 12345503,\n        \"duration\": 2209,\n        \"executed\": 1764752729000,\n        \"credits\": 1,\n        \"sandbox\": false,\n        \"filesize\": 334962,\n        \"error\": null,\n        \"code\": 200,\n        \"user_agent\": \"Python/3.9 aiohttp/3.10.5\",\n        \"request_id\": \"6ac98706-9dbe-4ba2-acaf-3ad2313048d6\",\n        \"query\": null\n      },\n      {\n        \"id\": 12345504,\n        \"duration\": 1419,\n        \"executed\": 1764616844000,\n        \"credits\": 1,\n        \"sandbox\": false,\n        \"filesize\": 300952,\n        \"error\": null,\n        \"code\": 200,\n        \"user_agent\": \"Python/3.9 aiohttp/3.10.5\",\n        \"request_id\": \"63a0fdbf-a07c-4c65-a8f7-4ad09db5530c\",\n        \"query\": null\n      }\n    ],\n    \"limit\": 5,\n    \"page\": 0,\n    \"total\": 233\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "96d68b3c-82fb-4408-bb30-086e9203449b",
+              "name": "Unauthorized. Invalid auth key, missing, or disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "status",
+                      "value": "all"
+                    },
+                    {
+                      "key": "key",
+                      "value": ""
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 2044\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "09af12f3-5897-47e4-b5f6-58c156787e86",
+              "name": "Too Many Requests. You have been rate limited.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "status",
+                      "value": "all"
+                    },
+                    {
+                      "key": "key",
+                      "value": ""
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "6077"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "6077"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "3493"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 2044\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "16d5dbb8-b677-454c-acae-42c1198f72e7",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "status",
+                      "value": "all"
+                    },
+                    {
+                      "key": "key",
+                      "value": ""
+                    },
+                    {
+                      "key": "cursor",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 2044\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.pdfshift.io/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "85c1a690-94c3-42ae-a477-d93eb45cecc9",
+    "name": "PDFShift API Documentation account Logs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This is the documentation for the PDFShift API.\n\nOur aim here is to provide you with a clear, concise and complete set of tool to generate the PDF you want.\n\nDon't forget to add the `sandbox` parameter to `True` while testing the API, this won't use your credits and generate free PDF (with a watermark).\nBut if you forgot to set it, don't worry ; Send us a message and we'll reset your credits usage.\n\nContact Support:\n Name: PDFShift\n Email: support@pdfshift.io",
+      "type": "text/plain"
+    }
+  }
+}

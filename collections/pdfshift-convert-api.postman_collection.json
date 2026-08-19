@@ -1,0 +1,2473 @@
+{
+  "item": [
+    {
+      "id": "73f7f998-9f7a-4246-8d93-6aeee05ec220",
+      "name": "Convert",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "414e5874-9c55-4f74-8489-19e16138b5f5",
+          "name": "Convert to PDF",
+          "request": {
+            "name": "Convert to PDF",
+            "description": {},
+            "url": {
+              "path": [
+                "convert",
+                "pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                "key": "X-Processor-Version",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source\": \"<string>\",\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false,\n  \"landscape\": false,\n  \"format\": \"A4\",\n  \"disable_backgrounds\": false,\n  \"remove_blank\": false,\n  \"pages\": null,\n  \"zoom\": 1,\n  \"margin\": {\n    \"top\": \"48\",\n    \"right\": \"48\",\n    \"bottom\": \"48\",\n    \"left\": \"48\"\n  },\n  \"header\": {\n    \"source\": \"<string>\",\n    \"height\": null,\n    \"start_at\": 1\n  },\n  \"footer\": {\n    \"source\": \"<string>\",\n    \"height\": null,\n    \"start_at\": 1\n  },\n  \"metadata\": null,\n  \"protection\": {\n    \"author\": null,\n    \"user_password\": \"\",\n    \"owner_password\": \"\",\n    \"no_print\": false,\n    \"no_copy\": false,\n    \"no_modify\": false\n  },\n  \"watermark\": {\n    \"source\": \"<string>\",\n    \"image\": \"<string>\",\n    \"text\": \"<string>\",\n    \"font_size\": 16,\n    \"font_family\": \"Helvetica\",\n    \"font_color\": \"000000\",\n    \"font_opacity\": 100,\n    \"font_bold\": false,\n    \"font_italic\": false,\n    \"offset_x\": \"center\",\n    \"offset_y\": \"middle\",\n    \"rotate\": -45\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "31ce8a4a-afb5-40f6-81d0-96d700541d3c",
+              "name": "PDF file generated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false,\n  \"landscape\": false,\n  \"format\": \"A4\",\n  \"disable_backgrounds\": false,\n  \"remove_blank\": false,\n  \"pages\": null,\n  \"zoom\": 1,\n  \"margin\": {\n    \"top\": \"48\",\n    \"right\": \"48\",\n    \"bottom\": \"48\",\n    \"left\": \"48\"\n  },\n  \"header\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Header Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"footer\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Footer Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"metadata\": {\n    \"author\": \"John Doe\",\n    \"title\": \"Sample PDF Document\",\n    \"subject\": \"Demonstration of PDFShift Capabilities\",\n    \"keywords\": \"PDF, API, PDFShift, Example\"\n  },\n  \"protection\": {\n    \"author\": null,\n    \"user_password\": \"\",\n    \"owner_password\": \"\",\n    \"no_print\": false,\n    \"no_copy\": false,\n    \"no_modify\": false\n  },\n  \"watermark\": {\n    \"source\": \"<string>\",\n    \"image\": \"<string>\",\n    \"text\": \"<string>\",\n    \"font_size\": 16,\n    \"font_family\": \"Helvetica\",\n    \"font_color\": \"000000\",\n    \"font_opacity\": 100,\n    \"font_bold\": false,\n    \"font_italic\": false,\n    \"offset_x\": \"center\",\n    \"offset_y\": \"middle\",\n    \"rotate\": -45\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "disabled": false,
+                  "description": "Provides the status code PDFShift got when loading your source when it is an HTTP request.",
+                  "key": "X-Response-Status-Code",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "Returns the name of the PDFShift’s server that ran the conversion.",
+                  "key": "X-PDFShift-Processor",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "Indicates the number of credits that this generation requires.",
+                  "key": "X-Credits-Cost",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "Contrary to X-Credits-Cost, this header indicates the number of credits that were decreased from your account. It is identical to X-Credits-Cost excepted if you passed the sandbox parameter, in which case the value will be at 0.",
+                  "key": "X-Credits-Used",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of miliseconds it took to load the HTML source provided in the request.",
+                  "key": "X-Response-Duration",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of miliseconds it took to load the source and then generate the PDF document. This value should be closer to the Time To First Byte duration you can have on your end.",
+                  "key": "X-PDFShift-Duration",
+                  "value": "1364"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"url\": \"https://s3.amazonaws.com/pdfshift/d/2/2019-05/99c456250a01448686d81752a3fb5beb/15466098-8368-49e1-ac33-ff4c3941a0df.pdf\",\n  \"filesize\": 259972,\n  \"duration\": 1500,\n  \"response\": {\n    \"duration\": 2562,\n    \"status-code\": 200\n  },\n  \"executed\": \"2025-12-02T12:34:56.789Z\",\n  \"pdf_pages\": 5\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "281d1b51-bdd3-4a85-b5ff-3e5ed2f7158d",
+              "name": "Conversion request accepted and queued for processing. Returned when the `webhook` parameter is used.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false,\n  \"landscape\": false,\n  \"format\": \"A4\",\n  \"disable_backgrounds\": false,\n  \"remove_blank\": false,\n  \"pages\": null,\n  \"zoom\": 1,\n  \"margin\": {\n    \"top\": \"48\",\n    \"right\": \"48\",\n    \"bottom\": \"48\",\n    \"left\": \"48\"\n  },\n  \"header\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Header Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"footer\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Footer Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"metadata\": {\n    \"author\": \"John Doe\",\n    \"title\": \"Sample PDF Document\",\n    \"subject\": \"Demonstration of PDFShift Capabilities\",\n    \"keywords\": \"PDF, API, PDFShift, Example\"\n  },\n  \"protection\": {\n    \"author\": null,\n    \"user_password\": \"\",\n    \"owner_password\": \"\",\n    \"no_print\": false,\n    \"no_copy\": false,\n    \"no_modify\": false\n  },\n  \"watermark\": {\n    \"source\": \"<string>\",\n    \"image\": \"<string>\",\n    \"text\": \"<string>\",\n    \"font_size\": 16,\n    \"font_family\": \"Helvetica\",\n    \"font_color\": \"000000\",\n    \"font_opacity\": 100,\n    \"font_bold\": false,\n    \"font_italic\": false,\n    \"offset_x\": \"center\",\n    \"offset_y\": \"middle\",\n    \"rotate\": -45\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"queued\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "94c62395-8e7b-439a-a3d1-e129ca072a3d",
+              "name": "Bad request. Data passed to the request were invalid or wrongly formatted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false,\n  \"landscape\": false,\n  \"format\": \"A4\",\n  \"disable_backgrounds\": false,\n  \"remove_blank\": false,\n  \"pages\": null,\n  \"zoom\": 1,\n  \"margin\": {\n    \"top\": \"48\",\n    \"right\": \"48\",\n    \"bottom\": \"48\",\n    \"left\": \"48\"\n  },\n  \"header\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Header Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"footer\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Footer Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"metadata\": {\n    \"author\": \"John Doe\",\n    \"title\": \"Sample PDF Document\",\n    \"subject\": \"Demonstration of PDFShift Capabilities\",\n    \"keywords\": \"PDF, API, PDFShift, Example\"\n  },\n  \"protection\": {\n    \"author\": null,\n    \"user_password\": \"\",\n    \"owner_password\": \"\",\n    \"no_print\": false,\n    \"no_copy\": false,\n    \"no_modify\": false\n  },\n  \"watermark\": {\n    \"source\": \"<string>\",\n    \"image\": \"<string>\",\n    \"text\": \"<string>\",\n    \"font_size\": 16,\n    \"font_family\": \"Helvetica\",\n    \"font_color\": \"000000\",\n    \"font_opacity\": 100,\n    \"font_bold\": false,\n    \"font_italic\": false,\n    \"offset_x\": \"center\",\n    \"offset_y\": \"middle\",\n    \"rotate\": -45\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"errors\": {},\n  \"code\": 4525\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b829aa73-4f40-4060-bac3-886eff89d972",
+              "name": "Unauthorized. Invalid auth key, missing, or disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false,\n  \"landscape\": false,\n  \"format\": \"A4\",\n  \"disable_backgrounds\": false,\n  \"remove_blank\": false,\n  \"pages\": null,\n  \"zoom\": 1,\n  \"margin\": {\n    \"top\": \"48\",\n    \"right\": \"48\",\n    \"bottom\": \"48\",\n    \"left\": \"48\"\n  },\n  \"header\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Header Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"footer\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Footer Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"metadata\": {\n    \"author\": \"John Doe\",\n    \"title\": \"Sample PDF Document\",\n    \"subject\": \"Demonstration of PDFShift Capabilities\",\n    \"keywords\": \"PDF, API, PDFShift, Example\"\n  },\n  \"protection\": {\n    \"author\": null,\n    \"user_password\": \"\",\n    \"owner_password\": \"\",\n    \"no_print\": false,\n    \"no_copy\": false,\n    \"no_modify\": false\n  },\n  \"watermark\": {\n    \"source\": \"<string>\",\n    \"image\": \"<string>\",\n    \"text\": \"<string>\",\n    \"font_size\": 16,\n    \"font_family\": \"Helvetica\",\n    \"font_color\": \"000000\",\n    \"font_opacity\": 100,\n    \"font_bold\": false,\n    \"font_italic\": false,\n    \"offset_x\": \"center\",\n    \"offset_y\": \"middle\",\n    \"rotate\": -45\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d988a3f-fdb9-4717-953c-a459b7e955b6",
+              "name": "Forbidden. No remaining credits left.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false,\n  \"landscape\": false,\n  \"format\": \"A4\",\n  \"disable_backgrounds\": false,\n  \"remove_blank\": false,\n  \"pages\": null,\n  \"zoom\": 1,\n  \"margin\": {\n    \"top\": \"48\",\n    \"right\": \"48\",\n    \"bottom\": \"48\",\n    \"left\": \"48\"\n  },\n  \"header\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Header Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"footer\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Footer Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"metadata\": {\n    \"author\": \"John Doe\",\n    \"title\": \"Sample PDF Document\",\n    \"subject\": \"Demonstration of PDFShift Capabilities\",\n    \"keywords\": \"PDF, API, PDFShift, Example\"\n  },\n  \"protection\": {\n    \"author\": null,\n    \"user_password\": \"\",\n    \"owner_password\": \"\",\n    \"no_print\": false,\n    \"no_copy\": false,\n    \"no_modify\": false\n  },\n  \"watermark\": {\n    \"source\": \"<string>\",\n    \"image\": \"<string>\",\n    \"text\": \"<string>\",\n    \"font_size\": 16,\n    \"font_family\": \"Helvetica\",\n    \"font_color\": \"000000\",\n    \"font_opacity\": 100,\n    \"font_bold\": false,\n    \"font_italic\": false,\n    \"offset_x\": \"center\",\n    \"offset_y\": \"middle\",\n    \"rotate\": -45\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b337e6f-7297-437c-b0a9-d474c61db33c",
+              "name": "Request Timeout. The requested page took too long to load.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false,\n  \"landscape\": false,\n  \"format\": \"A4\",\n  \"disable_backgrounds\": false,\n  \"remove_blank\": false,\n  \"pages\": null,\n  \"zoom\": 1,\n  \"margin\": {\n    \"top\": \"48\",\n    \"right\": \"48\",\n    \"bottom\": \"48\",\n    \"left\": \"48\"\n  },\n  \"header\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Header Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"footer\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Footer Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"metadata\": {\n    \"author\": \"John Doe\",\n    \"title\": \"Sample PDF Document\",\n    \"subject\": \"Demonstration of PDFShift Capabilities\",\n    \"keywords\": \"PDF, API, PDFShift, Example\"\n  },\n  \"protection\": {\n    \"author\": null,\n    \"user_password\": \"\",\n    \"owner_password\": \"\",\n    \"no_print\": false,\n    \"no_copy\": false,\n    \"no_modify\": false\n  },\n  \"watermark\": {\n    \"source\": \"<string>\",\n    \"image\": \"<string>\",\n    \"text\": \"<string>\",\n    \"font_size\": 16,\n    \"font_family\": \"Helvetica\",\n    \"font_color\": \"000000\",\n    \"font_opacity\": 100,\n    \"font_bold\": false,\n    \"font_italic\": false,\n    \"offset_x\": \"center\",\n    \"offset_y\": \"middle\",\n    \"rotate\": -45\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0b9d6e5-045b-4269-83dd-97d2c39cbc75",
+              "name": "Too Many Requests. You have been rate limited.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false,\n  \"landscape\": false,\n  \"format\": \"A4\",\n  \"disable_backgrounds\": false,\n  \"remove_blank\": false,\n  \"pages\": null,\n  \"zoom\": 1,\n  \"margin\": {\n    \"top\": \"48\",\n    \"right\": \"48\",\n    \"bottom\": \"48\",\n    \"left\": \"48\"\n  },\n  \"header\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Header Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"footer\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Footer Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"metadata\": {\n    \"author\": \"John Doe\",\n    \"title\": \"Sample PDF Document\",\n    \"subject\": \"Demonstration of PDFShift Capabilities\",\n    \"keywords\": \"PDF, API, PDFShift, Example\"\n  },\n  \"protection\": {\n    \"author\": null,\n    \"user_password\": \"\",\n    \"owner_password\": \"\",\n    \"no_print\": false,\n    \"no_copy\": false,\n    \"no_modify\": false\n  },\n  \"watermark\": {\n    \"source\": \"<string>\",\n    \"image\": \"<string>\",\n    \"text\": \"<string>\",\n    \"font_size\": 16,\n    \"font_family\": \"Helvetica\",\n    \"font_color\": \"000000\",\n    \"font_opacity\": 100,\n    \"font_bold\": false,\n    \"font_italic\": false,\n    \"offset_x\": \"center\",\n    \"offset_y\": \"middle\",\n    \"rotate\": -45\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e58baff-f7b9-4cdb-9480-6363762893fb",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false,\n  \"landscape\": false,\n  \"format\": \"A4\",\n  \"disable_backgrounds\": false,\n  \"remove_blank\": false,\n  \"pages\": null,\n  \"zoom\": 1,\n  \"margin\": {\n    \"top\": \"48\",\n    \"right\": \"48\",\n    \"bottom\": \"48\",\n    \"left\": \"48\"\n  },\n  \"header\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Header Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"footer\": {\n    \"source\": \"<div style=\\\"font-size:12px;\\\">Footer Example</div>\",\n    \"height\": \"48\",\n    \"start_at\": 1\n  },\n  \"metadata\": {\n    \"author\": \"John Doe\",\n    \"title\": \"Sample PDF Document\",\n    \"subject\": \"Demonstration of PDFShift Capabilities\",\n    \"keywords\": \"PDF, API, PDFShift, Example\"\n  },\n  \"protection\": {\n    \"author\": null,\n    \"user_password\": \"\",\n    \"owner_password\": \"\",\n    \"no_print\": false,\n    \"no_copy\": false,\n    \"no_modify\": false\n  },\n  \"watermark\": {\n    \"source\": \"<string>\",\n    \"image\": \"<string>\",\n    \"text\": \"<string>\",\n    \"font_size\": 16,\n    \"font_family\": \"Helvetica\",\n    \"font_color\": \"000000\",\n    \"font_opacity\": 100,\n    \"font_bold\": false,\n    \"font_italic\": false,\n    \"offset_x\": \"center\",\n    \"offset_y\": \"middle\",\n    \"rotate\": -45\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf68d3b5-b5dc-43fb-95b7-d659d91ba021",
+          "name": "Convert to PNG",
+          "request": {
+            "name": "Convert to PNG",
+            "description": {},
+            "url": {
+              "path": [
+                "convert",
+                "png"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                "key": "X-Processor-Version",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "image/png"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1f85e722-8aa8-4781-89e6-a65e223d2517",
+              "name": "PNG file generated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "png"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "image/png"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "disabled": false,
+                  "description": "Provides the status code PDFShift got when loading your source when it is an HTTP request.",
+                  "key": "X-Response-Status-Code",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "Returns the name of the PDFShift’s server that ran the conversion.",
+                  "key": "X-PDFShift-Processor",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "Indicates the number of credits that this generation requires.",
+                  "key": "X-Credits-Cost",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "Contrary to X-Credits-Cost, this header indicates the number of credits that were decreased from your account. It is identical to X-Credits-Cost excepted if you passed the sandbox parameter, in which case the value will be at 0.",
+                  "key": "X-Credits-Used",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of miliseconds it took to load the HTML source provided in the request.",
+                  "key": "X-Response-Duration",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of miliseconds it took to load the source and then generate the PDF document. This value should be closer to the Time To First Byte duration you can have on your end.",
+                  "key": "X-PDFShift-Duration",
+                  "value": "1364"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"url\": \"https://s3.amazonaws.com/pdfshift/d/2/2019-05/99c456250a01448686d81752a3fb5beb/15466098-8368-49e1-ac33-ff4c3941a0df.pdf\",\n  \"filesize\": 259972,\n  \"duration\": 1500,\n  \"response\": {\n    \"duration\": 2562,\n    \"status-code\": 200\n  },\n  \"executed\": \"2025-12-02T12:34:56.789Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3bd66ce7-b0b8-457f-affb-4b2c058d3bc3",
+              "name": "Conversion request accepted and queued for processing. Returned when the `webhook` parameter is used.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "png"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"queued\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f1e0006-6596-4051-b675-d740a3abdd80",
+              "name": "Bad request. Data passed to the request were invalid or wrongly formatted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "png"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"errors\": {},\n  \"code\": 4525\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "03d6814d-3fe6-45df-a42f-7e40032da484",
+              "name": "Unauthorized. Invalid auth key, missing, or disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "png"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d6c4c469-beae-418e-b838-daaab713bba1",
+              "name": "Forbidden. No remaining credits left.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "png"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8dc4b58c-8fb8-4a25-bccc-138701acb6bd",
+              "name": "Request Timeout. The requested page took too long to load.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "png"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59c1bf48-5284-4e45-815b-e24879b4e228",
+              "name": "Too Many Requests. You have been rate limited.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "png"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "794974dd-378f-4bad-866d-fd473e12e151",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "png"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87ca9f92-1d37-448a-9f48-faac6a48a8d9",
+          "name": "Convert to JPEG",
+          "request": {
+            "name": "Convert to JPEG",
+            "description": {},
+            "url": {
+              "path": [
+                "convert",
+                "jpeg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                "key": "X-Processor-Version",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "image/jpeg"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "98e998f5-0eaa-4b96-b9b5-bb03a96d8576",
+              "name": "JPEG file generated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "jpeg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "image/jpeg"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "disabled": false,
+                  "description": "Provides the status code PDFShift got when loading your source when it is an HTTP request.",
+                  "key": "X-Response-Status-Code",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "Returns the name of the PDFShift’s server that ran the conversion.",
+                  "key": "X-PDFShift-Processor",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "Indicates the number of credits that this generation requires.",
+                  "key": "X-Credits-Cost",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "Contrary to X-Credits-Cost, this header indicates the number of credits that were decreased from your account. It is identical to X-Credits-Cost excepted if you passed the sandbox parameter, in which case the value will be at 0.",
+                  "key": "X-Credits-Used",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of miliseconds it took to load the HTML source provided in the request.",
+                  "key": "X-Response-Duration",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of miliseconds it took to load the source and then generate the PDF document. This value should be closer to the Time To First Byte duration you can have on your end.",
+                  "key": "X-PDFShift-Duration",
+                  "value": "1364"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"url\": \"https://s3.amazonaws.com/pdfshift/d/2/2019-05/99c456250a01448686d81752a3fb5beb/15466098-8368-49e1-ac33-ff4c3941a0df.pdf\",\n  \"filesize\": 259972,\n  \"duration\": 1500,\n  \"response\": {\n    \"duration\": 2562,\n    \"status-code\": 200\n  },\n  \"executed\": \"2025-12-02T12:34:56.789Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2ced5022-7eca-4f30-8f35-a512404cab60",
+              "name": "Conversion request accepted and queued for processing. Returned when the `webhook` parameter is used.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "jpeg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"queued\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b461ab96-eeba-4628-808c-b18c66c79ebd",
+              "name": "Bad request. Data passed to the request were invalid or wrongly formatted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "jpeg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"errors\": {},\n  \"code\": 4525\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "105de6dc-8f51-4984-8cb6-7b18f1493c46",
+              "name": "Unauthorized. Invalid auth key, missing, or disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "jpeg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "492ec54e-d45b-4d97-8414-1a99e79acbd4",
+              "name": "Forbidden. No remaining credits left.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "jpeg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d97ea1e2-ea5d-4b54-86ec-590620ee87e4",
+              "name": "Request Timeout. The requested page took too long to load.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "jpeg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e2c9c20-0712-4ec6-beb6-07e8940f579a",
+              "name": "Too Many Requests. You have been rate limited.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "jpeg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43d0e43e-48d0-4b28-bea2-edc09335be90",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "jpeg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79c2e4d6-7b31-4db0-8717-b0ce80b2dbc5",
+          "name": "Convert to WEBP",
+          "request": {
+            "name": "Convert to WEBP",
+            "description": {},
+            "url": {
+              "path": [
+                "convert",
+                "webp"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                "key": "X-Processor-Version",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "image/webp"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6422b98f-fce5-426c-b58a-ff5c1a07969f",
+              "name": "WEBP file generated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "webp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "image/webp"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "disabled": false,
+                  "description": "Provides the status code PDFShift got when loading your source when it is an HTTP request.",
+                  "key": "X-Response-Status-Code",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "Returns the name of the PDFShift’s server that ran the conversion.",
+                  "key": "X-PDFShift-Processor",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "description": "Indicates the number of credits that this generation requires.",
+                  "key": "X-Credits-Cost",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "Contrary to X-Credits-Cost, this header indicates the number of credits that were decreased from your account. It is identical to X-Credits-Cost excepted if you passed the sandbox parameter, in which case the value will be at 0.",
+                  "key": "X-Credits-Used",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of miliseconds it took to load the HTML source provided in the request.",
+                  "key": "X-Response-Duration",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The number of miliseconds it took to load the source and then generate the PDF document. This value should be closer to the Time To First Byte duration you can have on your end.",
+                  "key": "X-PDFShift-Duration",
+                  "value": "1364"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"url\": \"https://s3.amazonaws.com/pdfshift/d/2/2019-05/99c456250a01448686d81752a3fb5beb/15466098-8368-49e1-ac33-ff4c3941a0df.pdf\",\n  \"filesize\": 259972,\n  \"duration\": 1500,\n  \"response\": {\n    \"duration\": 2562,\n    \"status-code\": 200\n  },\n  \"executed\": \"2025-12-02T12:34:56.789Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e9f726a4-1f0e-4bb1-8ddf-ac9e3e98f96a",
+              "name": "Conversion request accepted and queued for processing. Returned when the `webhook` parameter is used.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "webp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"queued\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b750c2cf-e52e-48e0-b2fa-4beac4e2dd3d",
+              "name": "Bad request. Data passed to the request were invalid or wrongly formatted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "webp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"errors\": {},\n  \"code\": 4525\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bfc7ed8c-367c-4f3f-b99e-57c4b1bfb114",
+              "name": "Unauthorized. Invalid auth key, missing, or disabled.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "webp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ee66510c-e4ce-4edf-af8c-e7fa387a4582",
+              "name": "Forbidden. No remaining credits left.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "webp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "334fd56a-00cb-401d-9bfd-a6486954c0f5",
+              "name": "Request Timeout. The requested page took too long to load.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "webp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Request Timeout",
+              "code": 408,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "34c8dd1a-bc0c-436c-ad38-ec5e86826eac",
+              "name": "Too Many Requests. You have been rate limited.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "webp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The number of requests remaining in the current rate limit window.",
+                  "key": "X-RateLimit-Remaining",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The maximum number of requests allowed in the current rate limit window.",
+                  "key": "X-RateLimit-Limit",
+                  "value": "1364"
+                },
+                {
+                  "disabled": false,
+                  "description": "The time at which the current rate limit window resets (Unix timestamp).",
+                  "key": "X-RateLimit-Reset",
+                  "value": "1755"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d64063fb-e366-4dcc-95c2-e4956acfe2b3",
+              "name": "Internal Server Error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "convert",
+                    "webp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-Key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Specifies the Chromium version that will be used for the conversion. Right now, only \"116\" and \"142\" are accepted.\nAll new users are automatically using the latest version.",
+                    "key": "X-Processor-Version",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"source\": \"<string>\",\n  \"viewport\": \"1280x1024\",\n  \"transparent\": false,\n  \"fullpage\": false,\n  \"css_selector\": null,\n  \"clip\": {\n    \"width\": \"<integer>\",\n    \"height\": \"<integer>\",\n    \"x\": \"<integer>\",\n    \"y\": \"<integer>\"\n  },\n  \"quality\": 80,\n  \"dpi\": 1,\n  \"sandbox\": false,\n  \"encode\": false,\n  \"filename\": \"<string>\",\n  \"s3_destination\": \"<string>\",\n  \"use_print\": false,\n  \"css\": \"<string>\",\n  \"javascript\": \"<string>\",\n  \"delay\": 0,\n  \"timeout\": \"<integer>\",\n  \"wait_for\": \"<string>\",\n  \"wait_for_network\": true,\n  \"ignore_long_polling\": false,\n  \"disable_javascript\": false,\n  \"lazy_load_images\": false,\n  \"raise_for_status\": false,\n  \"webhook\": {\n    \"url\": \"<uri>\",\n    \"method\": \"POST\",\n    \"auth\": {\n      \"username\": null,\n      \"password\": null\n    },\n    \"headers\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    }\n  },\n  \"auth\": {\n    \"username\": null,\n    \"password\": null\n  },\n  \"http_headers\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"cookies\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\",\n      \"secure\": false,\n      \"http_only\": false\n    }\n  ],\n  \"is_hipaa\": false,\n  \"is_gdpr\": false,\n  \"log_request\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"success\": true,\n  \"error\": \"string\",\n  \"code\": 9037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.pdfshift.io/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2ffdf057-19b0-4979-9fb3-6d7f06db7a52",
+    "name": "PDFShift API Documentation account Convert API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This is the documentation for the PDFShift API.\n\nOur aim here is to provide you with a clear, concise and complete set of tool to generate the PDF you want.\n\nDon't forget to add the `sandbox` parameter to `True` while testing the API, this won't use your credits and generate free PDF (with a watermark).\nBut if you forgot to set it, don't worry ; Send us a message and we'll reset your credits usage.\n\nContact Support:\n Name: PDFShift\n Email: support@pdfshift.io",
+      "type": "text/plain"
+    }
+  }
+}

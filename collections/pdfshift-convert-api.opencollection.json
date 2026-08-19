@@ -1,0 +1,110 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "PDFShift API Documentation account Convert API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-Key",
+      "value": "{{X-API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Convert",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Convert to PDF",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.pdfshift.io/v3/convert/pdf",
+            "headers": [
+              {
+                "name": "X-Processor-Version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Convert to PDF"
+        },
+        {
+          "info": {
+            "name": "Convert to PNG",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.pdfshift.io/v3/convert/png",
+            "headers": [
+              {
+                "name": "X-Processor-Version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Convert to PNG"
+        },
+        {
+          "info": {
+            "name": "Convert to JPEG",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.pdfshift.io/v3/convert/jpeg",
+            "headers": [
+              {
+                "name": "X-Processor-Version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Convert to JPEG"
+        },
+        {
+          "info": {
+            "name": "Convert to WEBP",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.pdfshift.io/v3/convert/webp",
+            "headers": [
+              {
+                "name": "X-Processor-Version",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Convert to WEBP"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

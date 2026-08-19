@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "PDFShift API Documentation account usage API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-Key",
+      "value": "{{X-API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "usage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Credits usage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.pdfshift.io/v3/credits/usage"
+          },
+          "docs": "Returns the current credits usage with some details to help you know where your usage is at.\n\nIt contains the `total` credits, the `remaining` credits you can use for your period and the `used` number of credits.\n\nThe `base` value might differ from the `total` if you have enabled overage. In this case, `base` represent the default limit from your current plan, whereas `total` is the limit set in your overage. Once your credit usage reaches the `total`, the conversions will be refused."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
