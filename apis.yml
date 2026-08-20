@@ -33,6 +33,8 @@ apis:
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3
   tags:
+  - Account
+  tags_raw:
   - account
   properties:
   - type: OpenAPI
@@ -57,6 +59,8 @@ apis:
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3
   tags:
+  - Credits
+  tags_raw:
   - credits
   properties:
   - type: OpenAPI
@@ -69,6 +73,8 @@ apis:
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3
   tags:
+  - Details
+  tags_raw:
   - details
   properties:
   - type: OpenAPI
@@ -105,6 +111,8 @@ apis:
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3
   tags:
+  - Templates
+  tags_raw:
   - templates
   properties:
   - type: OpenAPI
@@ -117,6 +125,8 @@ apis:
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3
   tags:
+  - Usage
+  tags_raw:
   - usage
   properties:
   - type: OpenAPI
