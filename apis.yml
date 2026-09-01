@@ -85,7 +85,7 @@ apis:
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3
   tags:
-  - details
+  - Details
   tags_raw:
   - details
   properties:
