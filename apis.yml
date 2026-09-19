@@ -35,6 +35,13 @@ tags:
   - PDF
   - HTML to PDF
   - Document Conversion
+  - Screenshots
+  - Chromium
+  - REST API
+tags_raw:
+  - PDF
+  - HTML to PDF
+  - Document Conversion
   - Screenshot
   - Chromium
   - REST API
@@ -71,7 +78,7 @@ apis:
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3
   tags:
-  - Credits
+  - Credit
   tags_raw:
   - credits
   properties:
