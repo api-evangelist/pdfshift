@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: PDFShift API Documentation account templates API
+  title: PDFShift API Documentation Templates API
   version: '3.0'
   description: 'This is the documentation for the PDFShift API.
 
@@ -25,12 +25,12 @@ servers:
 security:
 - apiKeyHeader: []
 tags:
-- name: templates
+- name: Templates
 paths:
   /templates:
     get:
       tags:
-      - templates
+      - Templates
       summary: List templates
       description: Returns a list of templates registered to your account.
       responses:
@@ -103,9 +103,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getTemplates
+      x-operation-id-source: derived
     post:
       tags:
-      - templates
+      - Templates
       summary: Create template
       description: Creates a new template stored at PDFShift.
       requestBody:
@@ -179,10 +181,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: postTemplates
+      x-operation-id-source: derived
   /templates/{slug}.html:
     get:
       tags:
-      - templates
+      - Templates
       summary: Get template HTML
       description: Returns the raw HTML content of the template.
       parameters:
@@ -257,10 +261,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getTemplates{slug}Html
+      x-operation-id-source: derived
   /templates/{slug}:
     put:
       tags:
-      - templates
+      - Templates
       summary: Update template
       description: Update the name or content of a template. Slug cannot be changed.
       parameters:
@@ -346,9 +352,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: putTemplatesBySlug
+      x-operation-id-source: derived
     delete:
       tags:
-      - templates
+      - Templates
       summary: Delete template
       description: Deletes a template by slug.
       parameters:
@@ -427,10 +435,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: deleteTemplatesBySlug
+      x-operation-id-source: derived
   /templates/{slug}.{ext}:
     post:
       tags:
-      - templates
+      - Templates
       summary: Generate document from template
       description: 'Generates a document from a template using provided data. Supported extensions: html, pdf, jpeg, png, webp.'
       parameters:
@@ -540,33 +550,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: postTemplatesBySlug}{ext
+      x-operation-id-source: derived
 components:
   schemas:
-    Template:
-      type: object
-      properties:
-        success:
-          type: boolean
-        template:
-          type: object
-          properties:
-            slug:
-              type: string
-            created:
-              type: integer
-              format: int64
-            name:
-              type: string
-    Errors:
-      type: object
-      properties:
-        success:
-          type: boolean
-        errors:
-          type: object
-        code:
-          type: integer
-          format: int32
     TemplateUpdateForm:
       type: object
       properties:
@@ -594,6 +581,31 @@ components:
       - slug
       - name
       - content
+    Template:
+      type: object
+      properties:
+        success:
+          type: boolean
+        template:
+          type: object
+          properties:
+            slug:
+              type: string
+            created:
+              type: integer
+              format: int64
+            name:
+              type: string
+    Errors:
+      type: object
+      properties:
+        success:
+          type: boolean
+        errors:
+          type: object
+        code:
+          type: integer
+          format: int32
     Error:
       type: object
       properties:

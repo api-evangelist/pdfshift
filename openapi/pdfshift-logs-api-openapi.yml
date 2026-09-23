@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: PDFShift API Documentation account Logs API
+  title: PDFShift API Documentation Logs API
   version: '3.0'
   description: 'This is the documentation for the PDFShift API.
 
@@ -109,6 +109,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getLogsByRequestId
+      x-operation-id-source: derived
   /logs:
     x-last-modified: 1764751475763
     get:
@@ -274,8 +276,20 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getLogs
+      x-operation-id-source: derived
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
     Log:
       type: object
       properties:
@@ -317,16 +331,6 @@ components:
         query:
           type: string
           default: null
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
     Logs:
       type: object
       properties:

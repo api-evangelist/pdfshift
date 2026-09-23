@@ -1,30 +1,51 @@
 {
   "provider": "pdfshift",
   "sources": [
-    "pdfshift-account-api-openapi.yml",
-    "pdfshift-convert-api-openapi.yml",
-    "pdfshift-credits-api-openapi.yml",
-    "pdfshift-details-api-openapi.yml",
-    "pdfshift-invoices-api-openapi.yml",
-    "pdfshift-logs-api-openapi.yml",
-    "pdfshift-templates-api-openapi.yml",
-    "pdfshift-usage-api-openapi.yml"
+    "_original/pdfshift-openapi.json"
   ],
   "outputs": [
-    "pdfshift-account-api-openapi.yml",
     "pdfshift-convert-api-openapi.yml",
-    "pdfshift-credits-api-openapi.yml",
-    "pdfshift-details-api-openapi.yml",
     "pdfshift-invoices-api-openapi.yml",
     "pdfshift-logs-api-openapi.yml",
+    "pdfshift-account-api-openapi.yml",
+    "pdfshift-credits-api-openapi.yml",
+    "pdfshift-details-api-openapi.yml",
     "pdfshift-templates-api-openapi.yml",
     "pdfshift-usage-api-openapi.yml"
   ],
   "archived": [],
   "errors": [
-    "pdfshift-templates-api-openapi.yml: dangling $ref: #/components/schemas/TemplateGenerateForm"
+    "pdfshift-openapi.json: dangling $ref: #/components/schemas/TemplateGenerateForm"
   ],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "pdfshift-openapi.json: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "pdfshift-openapi.json: tagged paths GET /invoices -> Invoices",
+    "pdfshift-openapi.json: tagged paths POST /convert/pdf -> Convert",
+    "pdfshift-openapi.json: tagged paths POST /convert/png -> Convert",
+    "pdfshift-openapi.json: tagged paths POST /convert/jpeg -> Convert",
+    "pdfshift-openapi.json: tagged paths POST /convert/webp -> Convert",
+    "pdfshift-openapi.json: tagged paths GET /logs/{request_id} -> Logs",
+    "pdfshift-openapi.json: declared missing tag: Convert",
+    "pdfshift-openapi.json: declared missing tag: Invoices",
+    "pdfshift-openapi.json: declared missing tag: Logs",
+    "pdfshift-openapi.json: declared missing tag: account",
+    "pdfshift-openapi.json: declared missing tag: credits",
+    "pdfshift-openapi.json: declared missing tag: details",
+    "pdfshift-openapi.json: declared missing tag: logs",
+    "pdfshift-openapi.json: declared missing tag: templates",
+    "pdfshift-openapi.json: declared missing tag: usage",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "pdfshift-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pdfshift-convert-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pdfshift-credits-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pdfshift-details-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pdfshift-invoices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pdfshift-logs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pdfshift-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pdfshift-usage-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

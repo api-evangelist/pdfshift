@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: PDFShift API Documentation account Invoices API
+  title: PDFShift API Documentation Invoices API
   version: '3.0'
   description: 'This is the documentation for the PDFShift API.
 
@@ -136,6 +136,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getInvoices
+      x-operation-id-source: derived
 components:
   schemas:
     Error:

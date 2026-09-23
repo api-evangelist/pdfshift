@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: PDFShift API Documentation account usage API
+  title: PDFShift API Documentation Usage API
   version: '3.0'
   description: 'This is the documentation for the PDFShift API.
 
@@ -25,13 +25,13 @@ servers:
 security:
 - apiKeyHeader: []
 tags:
-- name: usage
+- name: Usage
 paths:
   /credits/usage:
     x-last-modified: 1764750838571
     get:
       tags:
-      - usage
+      - Usage
       summary: Credits usage
       description: 'Returns the current credits usage with some details to help you know where your usage is at.
 
@@ -101,6 +101,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: getCreditsUsage
+      x-operation-id-source: derived
 components:
   schemas:
     Error:
