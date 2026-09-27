@@ -290,13 +290,6 @@ components:
         code:
           type: integer
           format: int32
-    Log:
-      type: object
-      properties:
-        success:
-          type: boolean
-        log:
-          $ref: '#/components/schemas/LogObject'
     LogObject:
       type: object
       properties:
@@ -331,6 +324,13 @@ components:
         query:
           type: string
           default: null
+    Log:
+      type: object
+      properties:
+        success:
+          type: boolean
+        log:
+          $ref: '#/components/schemas/LogObject'
     Logs:
       type: object
       properties:

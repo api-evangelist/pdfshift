@@ -47,7 +47,7 @@ tags_raw:
   - REST API
 apis:
 - aid: pdfshift:pdfshift-account-api
-  name: PDFShift account API
+  name: PDFShift Account API
   description: The account API from PDFShift — 1 operation(s) for account.
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3
@@ -73,7 +73,7 @@ apis:
   - type: Documentation
     url: https://docs.pdfshift.io/
 - aid: pdfshift:pdfshift-credits-api
-  name: PDFShift credits API
+  name: PDFShift Credits API
   description: The credits API from PDFShift — 1 operation(s) for credits.
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3
@@ -87,7 +87,7 @@ apis:
   - type: Documentation
     url: https://docs.pdfshift.io/
 - aid: pdfshift:pdfshift-details-api
-  name: PDFShift details API
+  name: PDFShift Details API
   description: The details API from PDFShift — 1 operation(s) for details.
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3
@@ -125,7 +125,7 @@ apis:
   - type: Documentation
     url: https://docs.pdfshift.io/
 - aid: pdfshift:pdfshift-templates-api
-  name: PDFShift templates API
+  name: PDFShift Templates API
   description: The templates API from PDFShift — 4 operation(s) for templates.
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3
@@ -139,7 +139,7 @@ apis:
   - type: Documentation
     url: https://docs.pdfshift.io/
 - aid: pdfshift:pdfshift-usage-api
-  name: PDFShift usage API
+  name: PDFShift Usage API
   description: The usage API from PDFShift — 1 operation(s) for usage.
   humanURL: https://docs.pdfshift.io/
   baseURL: https://api.pdfshift.io/v3

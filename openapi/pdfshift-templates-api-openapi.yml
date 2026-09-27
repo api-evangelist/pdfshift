@@ -565,6 +565,31 @@ components:
           description: HTML content of the template.
       required:
       - content
+    Template:
+      type: object
+      properties:
+        success:
+          type: boolean
+        template:
+          type: object
+          properties:
+            slug:
+              type: string
+            created:
+              type: integer
+              format: int64
+            name:
+              type: string
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
     TemplateCreateForm:
       type: object
       properties:
@@ -581,41 +606,6 @@ components:
       - slug
       - name
       - content
-    Template:
-      type: object
-      properties:
-        success:
-          type: boolean
-        template:
-          type: object
-          properties:
-            slug:
-              type: string
-            created:
-              type: integer
-              format: int64
-            name:
-              type: string
-    Errors:
-      type: object
-      properties:
-        success:
-          type: boolean
-        errors:
-          type: object
-        code:
-          type: integer
-          format: int32
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
     Templates:
       type: object
       properties:
@@ -647,6 +637,16 @@ components:
             total:
               type: integer
               format: int32
+    Errors:
+      type: object
+      properties:
+        success:
+          type: boolean
+        errors:
+          type: object
+        code:
+          type: integer
+          format: int32
   securitySchemes:
     apiKeyHeader:
       type: apiKey
