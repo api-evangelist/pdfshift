@@ -554,17 +554,26 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    TemplateUpdateForm:
+    Errors:
       type: object
       properties:
-        name:
+        success:
+          type: boolean
+        errors:
+          type: object
+        code:
+          type: integer
+          format: int32
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
           type: string
-          description: Name of the template.
-        content:
-          type: string
-          description: HTML content of the template.
-      required:
-      - content
+        code:
+          type: integer
+          format: int32
     Template:
       type: object
       properties:
@@ -580,32 +589,6 @@ components:
               format: int64
             name:
               type: string
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
-    TemplateCreateForm:
-      type: object
-      properties:
-        slug:
-          type: string
-          description: Unique identifier for the template.
-        name:
-          type: string
-          description: Name of the template.
-        content:
-          type: string
-          description: HTML content of the template.
-      required:
-      - slug
-      - name
-      - content
     Templates:
       type: object
       properties:
@@ -637,16 +620,33 @@ components:
             total:
               type: integer
               format: int32
-    Errors:
+    TemplateCreateForm:
       type: object
       properties:
-        success:
-          type: boolean
-        errors:
-          type: object
-        code:
-          type: integer
-          format: int32
+        slug:
+          type: string
+          description: Unique identifier for the template.
+        name:
+          type: string
+          description: Name of the template.
+        content:
+          type: string
+          description: HTML content of the template.
+      required:
+      - slug
+      - name
+      - content
+    TemplateUpdateForm:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the template.
+        content:
+          type: string
+          description: HTML content of the template.
+      required:
+      - content
   securitySchemes:
     apiKeyHeader:
       type: apiKey
