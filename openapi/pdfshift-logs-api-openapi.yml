@@ -280,16 +280,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
     LogObject:
       type: object
       properties:
@@ -324,6 +314,16 @@ components:
         query:
           type: string
           default: null
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
     Log:
       type: object
       properties:

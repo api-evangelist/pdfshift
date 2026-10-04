@@ -140,16 +140,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
     Invoices:
       type: object
       properties:
@@ -185,6 +175,16 @@ components:
             total:
               type: integer
               format: int32
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
   securitySchemes:
     apiKeyHeader:
       type: apiKey

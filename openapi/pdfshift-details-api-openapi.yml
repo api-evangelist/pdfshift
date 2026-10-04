@@ -121,16 +121,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Error:
-      type: object
-      properties:
-        success:
-          type: boolean
-        error:
-          type: string
-        code:
-          type: integer
-          format: int32
     Account:
       type: object
       properties:
@@ -203,6 +193,16 @@ components:
               default: null
               format: int64
       x-last-modified: 176475072263
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: string
+        code:
+          type: integer
+          format: int32
   securitySchemes:
     apiKeyHeader:
       type: apiKey
