@@ -662,3 +662,9 @@ components:
 externalDocs:
   description: You can access our documentation online by visiting https://docs.pdfshift.io
   url: https://docs.pdfshift.io
+x-provenance:
+  method: harvested
+  publisher: PDFShift
+  source: https://docs.pdfshift.io/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
