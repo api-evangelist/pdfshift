@@ -64,48 +64,178 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-PDFShift is an HTML to PDF conversion REST API that generates pixel-perfect PDFs from HTML and CSS using Chromium rendering. It supports custom headers, footers, watermarks, password protection, JavaScript execution, screenshot capture (PNG, JPEG, WebP), webhook notifications, and direct export to Amazon S3 and Google Cloud Storage.
+PDFShift is an HTML to PDF conversion REST API that generates pixel-perfect PDFs from HTML and CSS using Chromium rendering. It supports custom headers, footers, watermarks, password protection, JavaScript execution, screenshot capture, webhook notifications, and direct export to Amazon S3 and Google Cloud Storage.
 
-Over 300 million conversions served for 15,000+ developers with average conversion times of 1.5 seconds and 99.9% uptime.
+**Areas:** PDF · HTML to PDF · Document Conversion · Screenshots · Chromium · REST API
 
-## API
+## PDFShift on APIs.io
 
-- **Base URL:** `https://api.pdfshift.io/v3`
-- **Authentication:** API Key via `X-API-Key` header
-- **Documentation:** [docs.pdfshift.io](https://docs.pdfshift.io/)
-- **OpenAPI Spec:** [openapi.json](https://docs.pdfshift.io/api-reference/openapi.json)
+Everything profiled for PDFShift is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/pdfshift/](https://apis.io/providers/pdfshift/)** — or go straight to one of the APIs or properties below.
 
-### Key Endpoints
+### APIs (8)
 
-- `POST /convert/pdf` — Convert HTML or URL to PDF
-- `POST /convert/png` — Convert HTML or URL to PNG screenshot
-- `POST /convert/jpeg` — Convert HTML or URL to JPEG screenshot
-- `POST /convert/webp` — Convert HTML or URL to WebP screenshot
-- `GET /usage` — Retrieve account credit usage
-- Templates and logging endpoints also available
+- [PDFShift Account API](https://apis.io/apis/pdfshift/pdfshift-account-api/) — The account API from PDFShift — 1 operation(s) for account.
+- [PDFShift Convert API](https://apis.io/apis/pdfshift/pdfshift-convert-api/) — The Convert API from PDFShift — 4 operation(s) for convert.
+- [PDFShift Credits API](https://apis.io/apis/pdfshift/pdfshift-credits-api/) — The credits API from PDFShift — 1 operation(s) for credits.
+- [PDFShift Details API](https://apis.io/apis/pdfshift/pdfshift-details-api/) — The details API from PDFShift — 1 operation(s) for details.
+- [PDFShift Invoices API](https://apis.io/apis/pdfshift/pdfshift-invoices-api/) — The Invoices API from PDFShift — 1 operation(s) for invoices.
+- [PDFShift Logs API](https://apis.io/apis/pdfshift/pdfshift-logs-api/) — The Logs API from PDFShift — 2 operation(s) for logs.
+- [PDFShift Templates API](https://apis.io/apis/pdfshift/pdfshift-templates-api/) — The templates API from PDFShift — 4 operation(s) for templates.
+- [PDFShift Usage API](https://apis.io/apis/pdfshift/pdfshift-usage-api/) — The usage API from PDFShift — 1 operation(s) for usage.
 
-## Plans
+### Published properties
 
-| Plan       | Monthly Price | Credits/Month | Cost per Credit |
-|------------|--------------|---------------|-----------------|
-| Free       | $0           | 50            | —               |
-| Startup    | $9           | 500           | ~$0.04          |
-| Boost      | $24          | 2,500         | ~$0.03          |
-| Growth     | $39          | 5,000         | ~$0.025         |
-| Enterprise | Custom       | Custom        | Custom          |
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-See [plans/pdfshift-plans-pricing.yml](plans/pdfshift-plans-pricing.yml) for full details.
+#### MCP servers (1)
 
-## Links
+Model Context Protocol servers that expose the API to agents.
+
+- [pdfshift](https://apis.io/servers/pdfshift/pdfshift/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Pdfshift Agentic Access](https://apis.io/agentic-access/pdfshift/pdfshift-agentic-access/)
+
+#### JSON Schema (21)
+
+The data models the API reads and writes.
+
+- [Account](https://apis.io/schemas/pdfshift/account/)
+- [BasicAuthForm](https://apis.io/schemas/pdfshift/basicauthform/)
+- [ConvertForm](https://apis.io/schemas/pdfshift/convertform/)
+- [CookieForm](https://apis.io/schemas/pdfshift/cookieform/)
+- [Credits](https://apis.io/schemas/pdfshift/credits/)
+- [CustomHeaderFooter](https://apis.io/schemas/pdfshift/customheaderfooter/)
+- [Error](https://apis.io/schemas/pdfshift/error/)
+- [Errors](https://apis.io/schemas/pdfshift/errors/)
+- [ImageConvertForm](https://apis.io/schemas/pdfshift/imageconvertform/)
+- [Invoices](https://apis.io/schemas/pdfshift/invoices/)
+- [Log](https://apis.io/schemas/pdfshift/log/)
+- [LogObject](https://apis.io/schemas/pdfshift/logobject/)
+- [Logs](https://apis.io/schemas/pdfshift/logs/)
+- [MarginForm](https://apis.io/schemas/pdfshift/marginform/)
+- [ProtectionForm](https://apis.io/schemas/pdfshift/protectionform/)
+- [Template](https://apis.io/schemas/pdfshift/template/)
+- [TemplateCreateForm](https://apis.io/schemas/pdfshift/templatecreateform/)
+- [Templates](https://apis.io/schemas/pdfshift/templates/)
+- [TemplateUpdateForm](https://apis.io/schemas/pdfshift/templateupdateform/)
+- [WatermarkForm](https://apis.io/schemas/pdfshift/watermarkform/)
+- [WebhookForm](https://apis.io/schemas/pdfshift/webhookform/)
+
+#### JSON-LD (2)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Pdfshift Api Context](https://apis.io/jsonld/pdfshift/pdfshift-api/)
+- [Pdfshift Context](https://apis.io/jsonld/pdfshift/pdfshift-context/)
+
+#### Collections (8)
+
+Postman and Open Collection request collections.
+
+- [PDFShift API Documentation account API](https://apis.io/collections/pdfshift/open-pdfshift-account-api/)
+- [PDFShift API Documentation account Convert API](https://apis.io/collections/pdfshift/open-pdfshift-convert-api/)
+- [PDFShift API Documentation account credits API](https://apis.io/collections/pdfshift/open-pdfshift-credits-api/)
+- [PDFShift API Documentation account details API](https://apis.io/collections/pdfshift/open-pdfshift-details-api/)
+- [PDFShift API Documentation account Invoices API](https://apis.io/collections/pdfshift/open-pdfshift-invoices-api/)
+- [PDFShift API Documentation account Logs API](https://apis.io/collections/pdfshift/open-pdfshift-logs-api/)
+- [PDFShift API Documentation account templates API](https://apis.io/collections/pdfshift/open-pdfshift-templates-api/)
+- [PDFShift API Documentation account usage API](https://apis.io/collections/pdfshift/open-pdfshift-usage-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [PDFShift — jsonschema rules](https://apis.io/rules/pdfshift/pdfshift-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Pdfshift Authentication](https://apis.io/security/pdfshift/pdfshift-authentication/)
+- [Pdfshift Domain Security](https://apis.io/security/pdfshift/pdfshift-domain-security/)
+- [Pdfshift Vulnerability Disclosure](https://apis.io/security/pdfshift/pdfshift-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Pdfshift Plans Pricing](https://apis.io/plans/pdfshift/pdfshift-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Pdfshift Rate Limits](https://apis.io/rate-limits/pdfshift/pdfshift-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Pdfshift Finops](https://apis.io/finops/pdfshift/pdfshift-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://pdfshift.io/)
 - [Documentation](https://docs.pdfshift.io/)
-- [GitHub Organization](https://github.com/pdfshift)
-- [Status Page](https://status.pdfshift.io/)
 - [Pricing](https://pdfshift.io/pricing/)
-- [LinkedIn](https://www.linkedin.com/company/pdfshift-io)
-- [X / Twitter](https://x.com/pdfshift)
+- [Blog](https://pdfshift.io/guides/)
+- [Status](https://status.pdfshift.io/)
 
-## APIs.json
+## API Evangelist rating
 
-This repository contains an [APIs.json 0.19](apis.yml) profile for PDFShift maintained by [API Evangelist](https://apievangelist.com).
+**Kin Score 33.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 59.2 |
+| Contract governance | 9.8 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 18.4 |
+
+**Agent readiness 35.3** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/pdfshift/](https://apis.io/providers/pdfshift/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for PDFShift: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/pdfshift/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
